@@ -1,0 +1,68 @@
+
+R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> #heterogeneity.R
+> # R to explore heterogeneity in Vancouver condos
+> # Tom Davidoff
+> # 04/23/25
+> 
+> library(data.table)
+> library(ggplot2)
+> library(fixest)
+> 
+> # read in mls.R from foreignTrend
+> dsales <- fread("~/onedrive/foreignTrend/data/derived/mls.csv")
+> dsales[, date := as.Date(`Sold Date`, format = "%m/%d/%Y")]
+> dsales <- dsales[!is.na(date)]
+> dsales[, price := as.numeric(gsub("\\$", "", gsub(",", "", `Price`)))]
+> # convert to 1/30/2022 style to date 
+> 
+> # convert price from $1,000,482 to numeric
+> for (t in c("Apartment/Condo", "HOUSE")) {
++ 	dst <- dsales[TypeDwel==t]
++ 	print(quantile(dst[date>as.Date("2015-01-01") & date<as.Date("2015-12-31"),price],probs=c(.1,.25,.5,.75,.9,.95,.975,.99)))
++ 	print(quantile(dst[date>as.Date("2016-02-01") & date<as.Date("2016-04-01"),price],probs=c(.1,.25,.5,.75,.9,.95,.975,.99)))
++ 	print(quantile(dst[date>as.Date("2016-04-01") & date<as.Date("2016-08-01"),price],probs=c(.1,.25,.5,.75,.9,.95,.975,.99)))
++ 	print(quantile(dst[date>as.Date("2016-08-15") & date<as.Date("2016-11-15"),price],probs=c(.1,.25,.5,.75,.9,.95,.975,.99)))
++ 	print(quantile(dst[date>as.Date("2017-01-01") & date<as.Date("2017-12-31"),price],probs=c(.1,.25,.5,.75,.9,.95,.975,.99)))
++ }
+    10%     25%     50%     75%     90%     95%   97.5%     99% 
+ 186000  260000  370000  501900  702000  925000 1260000 1865200 
+    10%     25%     50%     75%     90%     95%   97.5%     99% 
+ 197000  275000  399900  560000  799350 1050000 1400000 2205575 
+    10%     25%     50%     75%     90%     95%   97.5%     99% 
+ 194640  271500  400000  570000  805000 1050000 1440000 2113600 
+    10%     25%     50%     75%     90%     95%   97.5%     99% 
+ 200000  276050  399900  557000  778000 1009500 1400000 1950000 
+    10%     25%     50%     75%     90%     95%   97.5%     99% 
+ 250000  340000  473000  650000  890000 1158975 1525000 2179851 
+    10%     25%     50%     75%     90%     95%   97.5%     99% 
+ 420395  573000  835000 1310000 2130000 2930000 3819350 5200000 
+    10%     25%     50%     75%     90%     95%   97.5%     99% 
+ 496600  695000  999000 1586000 2625000 3652000 4500000 6072800 
+    10%     25%     50%     75%     90%     95%   97.5%     99% 
+ 501000  699500  970000 1560000 2510000 3413000 4300000 5814400 
+    10%     25%     50%     75%     90%     95%   97.5%     99% 
+ 480000  642000  885000 1394625 2178500 3042720 4000000 5691360 
+    10%     25%     50%     75%     90%     95%   97.5%     99% 
+ 590000  768000 1050000 1538000 2338800 3150000 4100000 5489000 
+> 
+> proc.time()
+   user  system elapsed 
+  5.780   0.144   5.920 
