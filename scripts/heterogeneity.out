@@ -26,43 +26,524 @@ Type 'q()' to quit R.
 > library(ggplot2)
 > library(fixest)
 > 
-> # read in mls.R from foreignTrend
-> dsales <- fread("~/onedrive/foreignTrend/data/derived/mls.csv")
-> dsales[, date := as.Date(`Sold Date`, format = "%m/%d/%Y")]
-> dsales <- dsales[!is.na(date)]
-> dsales[, price := as.numeric(gsub("\\$", "", gsub(",", "", `Price`)))]
-> # convert to 1/30/2022 style to date 
-> 
-> # convert price from $1,000,482 to numeric
-> for (t in c("Apartment/Condo", "HOUSE")) {
-+ 	dst <- dsales[TypeDwel==t]
-+ 	print(quantile(dst[date>as.Date("2015-01-01") & date<as.Date("2015-12-31"),price],probs=c(.1,.25,.5,.75,.9,.95,.975,.99)))
-+ 	print(quantile(dst[date>as.Date("2016-02-01") & date<as.Date("2016-04-01"),price],probs=c(.1,.25,.5,.75,.9,.95,.975,.99)))
-+ 	print(quantile(dst[date>as.Date("2016-04-01") & date<as.Date("2016-08-01"),price],probs=c(.1,.25,.5,.75,.9,.95,.975,.99)))
-+ 	print(quantile(dst[date>as.Date("2016-08-15") & date<as.Date("2016-11-15"),price],probs=c(.1,.25,.5,.75,.9,.95,.975,.99)))
-+ 	print(quantile(dst[date>as.Date("2017-01-01") & date<as.Date("2017-12-31"),price],probs=c(.1,.25,.5,.75,.9,.95,.975,.99)))
+> MADESALES <- 1
+> if (MADESALES == 0) {
++ 	# read in mls.R from source
++ 
++ 	df <- fread("~/docs/data/bca/data_advice_REVD24_20240331/bca_folio_sales_20240331_REVD24.csv",select=c("JURISDICTION_CODE","CONVEYANCE_DATE","CONVEYANCE_PRICE","CONVEYANCE_TYPE_DESCRIPTION","FOLIO_ID","ROLL_NUMBER"))
++ 	print(summary(df))
++ 
++ 	da <- fread("~/docs/data/bca/data_advice_REVD24_20240331/bca_folio_addresses_20240331_REVD24.csv",select=c("FOLIO_ID","UNIT_NUMBER","STREET_NUMBER","STREET_DIRECTION_PREFIX","STREET_NAME","STREET_TYPE","STREET_DIRECTION_SUFFIX","CITY","POSTAL_CODE","PROVINCE","JURISDICTION_CODE"))
++ 	da[,building:=paste(STREET_NUMBER,STREET_DIRECTION_PREFIX,STREET_NAME,JURISDICTION_CODE)]
++ 	da[,buildingN:=.N,by=c("building")]
++ 	df <- merge(df,da,by=c("FOLIO_ID","JURISDICTION_CODE"))
++ 
++ 	dd <- fread("~/docs/data/bca/data_advice_REVD24_20240331/bca_folio_descriptions_20240331_REVD24.csv",select=c("FOLIO_ID","ACTUAL_USE_DESCRIPTION","JURISDICTION_CODE","REGIONAL_DISTRICT"))
++ 
++ 	df <- merge(df,dd,by=c("FOLIO_ID","JURISDICTION_CODE"))
++ 	fwrite(df,"data/derived/sales.csv")
 + }
-    10%     25%     50%     75%     90%     95%   97.5%     99% 
- 186000  260000  370000  501900  702000  925000 1260000 1865200 
-    10%     25%     50%     75%     90%     95%   97.5%     99% 
- 197000  275000  399900  560000  799350 1050000 1400000 2205575 
-    10%     25%     50%     75%     90%     95%   97.5%     99% 
- 194640  271500  400000  570000  805000 1050000 1440000 2113600 
-    10%     25%     50%     75%     90%     95%   97.5%     99% 
- 200000  276050  399900  557000  778000 1009500 1400000 1950000 
-    10%     25%     50%     75%     90%     95%   97.5%     99% 
- 250000  340000  473000  650000  890000 1158975 1525000 2179851 
-    10%     25%     50%     75%     90%     95%   97.5%     99% 
- 420395  573000  835000 1310000 2130000 2930000 3819350 5200000 
-    10%     25%     50%     75%     90%     95%   97.5%     99% 
- 496600  695000  999000 1586000 2625000 3652000 4500000 6072800 
-    10%     25%     50%     75%     90%     95%   97.5%     99% 
- 501000  699500  970000 1560000 2510000 3413000 4300000 5814400 
-    10%     25%     50%     75%     90%     95%   97.5%     99% 
- 480000  642000  885000 1394625 2178500 3042720 4000000 5691360 
-    10%     25%     50%     75%     90%     95%   97.5%     99% 
- 590000  768000 1050000 1538000 2338800 3150000 4100000 5489000 
+> df <- fread("data/derived/sales.csv")
 > 
+> print(summary(df))
+   FOLIO_ID         JURISDICTION_CODE CONVEYANCE_DATE         
+ Length:4769851     Min.   :200.0     Min.   :19010621000000  
+ Class :character   1st Qu.:225.0     1st Qu.:19990224000000  
+ Mode  :character   Median :312.0     Median :20090522000000  
+                    Mean   :361.6     Mean   :20067963678298  
+                    3rd Qu.:338.0     3rd Qu.:20170511000000  
+                    Max.   :792.0     Max.   :20240313000000  
+                                                              
+ CONVEYANCE_PRICE    CONVEYANCE_TYPE_DESCRIPTION ROLL_NUMBER       
+ Min.   :0.000e+00   Length:4769851              Length:4769851    
+ 1st Qu.:1.340e+05   Class :character            Class :character  
+ Median :2.870e+05   Mode  :character            Mode  :character  
+ Mean   :5.172e+05                                                 
+ 3rd Qu.:5.450e+05                                                 
+ Max.   :1.250e+09                                                 
+ NA's   :21260                                                     
+ UNIT_NUMBER        STREET_NUMBER      STREET_DIRECTION_PREFIX
+ Length:4769851     Length:4769851     Length:4769851         
+ Class :character   Class :character   Class :character       
+ Mode  :character   Mode  :character   Mode  :character       
+                                                              
+                                                              
+                                                              
+                                                              
+ STREET_NAME        STREET_TYPE        STREET_DIRECTION_SUFFIX
+ Length:4769851     Length:4769851     Length:4769851         
+ Class :character   Class :character   Class :character       
+ Mode  :character   Mode  :character   Mode  :character       
+                                                              
+                                                              
+                                                              
+                                                              
+     CITY           POSTAL_CODE          PROVINCE           building        
+ Length:4769851     Length:4769851     Length:4769851     Length:4769851    
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+   buildingN       ACTUAL_USE_DESCRIPTION REGIONAL_DISTRICT 
+ Min.   :   1.00   Length:4769851         Length:4769851    
+ 1st Qu.:   1.00   Class :character       Class :character  
+ Median :   1.00   Mode  :character       Mode  :character  
+ Mean   :  53.56                                            
+ 3rd Qu.:  32.00                                            
+ Max.   :6499.00                                            
+                                                            
+> print(table(df[,REGIONAL_DISTRICT]))
+
+   Alberni-Clayoquot      Bulkley-Nechako              Capital 
+               37666                55728               376266 
+             Cariboo        Central Coast     Central Kootenay 
+              100129                 2934                83354 
+    Central Okanagan     Columbia Shuswap         Comox Valley 
+              229505                83103                86772 
+     Cowichan Valley        East Kootenay        Fraser Valley 
+               97009                97492               277879 
+  Fraser-Fort George      Kitimat-Stikine    Kootenay-Boundary 
+              115576                40981                51157 
+     Metro Vancouver     Mount Waddington              Nanaimo 
+             2139443                13992               188087 
+No Regional District          North Coast       North Okanagan 
+                  44                22084               100544 
+ Northern Rockies RM Okanagan-Similkameen          Peace River 
+                6219               108643                86981 
+              qathet    Squamish-Lillooet              Stikine 
+               29477                72182                 1554 
+          Strathcona       Sunshine Coast      Thompson-Nicola 
+               54985                50928               159137 
+> df <- df[REGIONAL_DISTRICT=="Metro Vancouver"]
+> print(table(df[,ACTUAL_USE_DESCRIPTION]))
+
+                        2 Acres Or More (Manufactured Home) 
+                                                        199 
+                              2 Acres Or More (Outbuilding) 
+                                                        246 
+                        2 Acres Or More (Seasonal Dwelling) 
+                                                        121 
+           2 Acres Or More (Single Family Dwelling, Duplex) 
+                                                      14585 
+                                   2 Acres Or More (Vacant) 
+                                                       2610 
+                                            Air Space Title 
+                                                         74 
+                                  Airports, Heliports, Etc. 
+                                                         20 
+                                                       Alrt 
+                                                         83 
+                                             Alrt/Mixed Use 
+                                                          3 
+                                             Asphalt Plants 
+                                                         12 
+                                      Automobile Dealership 
+                                                        271 
+                       Automobile Paint Shop, Garages, Etc. 
+                                                       1540 
+                                     Automobile Sales (Lot) 
+                                                        183 
+                             Bakery & Biscuit Manufacturing 
+                                                         15 
+                                                       Bank 
+                                                        289 
+                  Bed & Breakfast Operation 4 Or More Units 
+                                                         36 
+                Bed & Breakfast Operation Less Than 4 Units 
+                                                        203 
+                                                       Beef 
+                                                       1000 
+                                              Beef (Vacant) 
+                                                         36 
+                                                    Big Box 
+                                                        144 
+                                              Bowling Alley 
+                                                         12 
+                                                    Brewery 
+                                                          7 
+                      Bus Company, Including Street Railway 
+                                                         77 
+                                    Campground (Commercial) 
+                                                         27 
+       Campgrounds (Includes Government Campgrounds, Ymca & 
+                                                         14 
+                                                   Car Wash 
+                                                         47 
+                                              Cement Plants 
+                                                          4 
+                   Cemeteries (Includes Public Or Private). 
+                                                         15 
+                    Chemical & Chemical Products Industries 
+                                                         18 
+                                   Churches & Bible Schools 
+                                                        764 
+               Civic, Institutional & Recreational (Vacant) 
+                                                       2280 
+                                          Clothing Industry 
+                                                         83 
+                                      Commercial Strata-Lot 
+                                                      42616 
+                 Community Antenna Television (Cablevision) 
+                                                         11 
+                                     Concrete Mixing Plants 
+                                                         17 
+             Confectionery Manufacturing & Sugar Processing 
+                                                          1 
+                          Convenience Store/Service Station 
+                                                        267 
+                                                      Dairy 
+                                                        359 
+                                             Dairy (Vacant) 
+                                                         45 
+                                             Dairy Products 
+                                                         13 
+                             Department Store - Stand Alone 
+                                                          3 
+                                            Docks & Wharves 
+                                                         24 
+                                        Drive-In Restaurant 
+                                                          9 
+                                          Drive-In Theatres 
+                                                          3 
+            Duplex, Non-Strata Side by Side or Front / Back 
+                                                      16161 
+                               Duplex, Non-Strata Up / Down 
+                                                        557 
+                                Duplex, Strata Front / Back 
+                                                       7625 
+                                Duplex, Strata Side by Side 
+                                                      21217 
+                                   Duplex, Strata Up / Down 
+                                                        360 
+                 Electrical & Electronics Products Industry 
+                                                          6 
+            Electrical Power Systems (Including Non-Utility 
+                                                         36 
+                                      Fast Food Restaurants 
+                                                        187 
+                                         Feed Manufacturing 
+                                                          1 
+                                                Food Market 
+                                                        101 
+                                                   Fourplex 
+                                                        186 
+                                          Fruit & Vegetable 
+                                                          2 
+                              Furniture & Fixtures Industry 
+                                                         35 
+         Garbage Dumps, Sanitary Fills, Sewer Lagoons, Etc. 
+                                                         34 
+                                   Gas Distribution Systems 
+                                                         44 
+                   Golf Courses (Includes Public & Private) 
+                                                         73 
+     Government Buildings (Includes Courthouse, Post Office 
+                                                         70 
+          Government Research Centres (Includes Nurseries & 
+                                                          1 
+      Government Reserves (Includes Greenbelts (Not In Farm 
+                                                         57 
+                                             Grain & Forage 
+                                                       1444 
+                                    Grain & Forage (Vacant) 
+                                                        140 
+                                            Grain Elevators 
+                                                          6 
+                 Greenhouses And Nurseries (Not Farm Class) 
+                                                         30 
+                        Hall (Community, Lodge, Club, Etc.) 
+                                                        130 
+     Hospitals (Nursing Homes Refer To Commercial Section). 
+                                                         46 
+                                                      Hotel 
+                                                        212 
+                                  IC&I Water Lot (Improved) 
+                                                          7 
+                                    IC&I Water Lot (Vacant) 
+                                                         18 
+                        Individual Strata Lot (Hotel/Motel) 
+                                                       3673 
+                                        Industrial (Vacant) 
+                                                       1878 
+                                         Irrigation Systems 
+                                                          1 
+                      Land Classified Recreational Used For 
+                                                          8 
+                                           Leather Industry 
+                                                          5 
+                                  Liquid Gas Storage Plants 
+                                                          4 
+                       Logging Operations, Incl Log Storage 
+                                                          2 
+        Lumber Remanufacturing (When Separate From Sawmill) 
+                                                         36 
+                           Lumber Yard Or Building Supplies 
+                                                         55 
+             Machinery Manufacturing (Excluding Electrical) 
+                                                         11 
+          Manufactured Home (Not In Manufactured Home Park) 
+                                                       2296 
+          Manufactured Home (Within Manufactured Home Park) 
+                                                       9180 
+                                     Manufactured Home Park 
+                                                        154 
+           Marine & Navigational Facilities (Includes Ferry 
+                                                         15 
+                                 Marine Facilities (Marina) 
+                                                        290 
+                                             Meat & Poultry 
+                                                         14 
+                               Metal Fabricating Industries 
+                                                         50 
+         Mining & Milling Non-Metallic (Including Asbestos, 
+                                                          1 
+                            Miscellaneous (Food Processing) 
+                                                         29 
+                 Miscellaneous (Forest And Allied Industry) 
+                                                         32 
+               Miscellaneous (Mining And Allied Industries) 
+                                                         10 
+             Miscellaneous (Transportation & Communication) 
+                                                         34 
+                         Miscellaneous & (Industrial Other) 
+                                                        196 
+                                                      Mixed 
+                                                       1530 
+                                             Mixed (Vacant) 
+                                                         56 
+                                         Motel & Auto Court 
+                                                         51 
+                             Multi-Family (Apartment Block) 
+                                                       5949 
+                                  Multi-Family (Conversion) 
+                                                       7333 
+              Multi-Family (Garden Apartment & Row Housing) 
+                                                       1116 
+                                   Multi-Family (High-Rise) 
+                                                        831 
+                          Multi-Family (Minimal Commercial) 
+                                                       1532 
+                           Multi-Family (Residential Hotel) 
+                                                        628 
+                                      Multi-Family (Vacant) 
+                                                        975 
+                                          Neighbourhood Pub 
+                                                        109 
+                                        Neighbourhood Store 
+                                                         33 
+                              Office Building (Primary Use) 
+                                                       3893 
+                    Oil & Gas Pumping & Compressor Stations 
+                                                          3 
+                         Oil & Gas Transportation Pipelines 
+                                                          1 
+                                        Oil Refining Plants 
+                                                          6 
+                                                      Other 
+                                                       2726 
+                                             Other (Vacant) 
+                                                        141 
+     Paper Box, Paper Bag, And Other Paper Remanufacturing. 
+                                                          4 
+                    Parking (Lot Only, Paved Or Gravel-Com) 
+                                                        654 
+                    Parking (Lot Only, Paved Or Gravel-Res) 
+                                                         40 
+                                             Parking Garage 
+                                                         82 
+                         Parking Lot Only (Paved Or Gravel) 
+                                                        181 
+                                     Parks & Playing Fields 
+                                                       1070 
+                                      Petroleum Bulk Plants 
+                                                          2 
+                  Planer Mills (When Separate From Sawmill) 
+                                                         10 
+                                              Plywood Mills 
+                                                          1 
+                                                    Poultry 
+                                                        304 
+              Primary Metal Industries (Iron & Steel Mills, 
+                                                          8 
+                             Printing & Publishing Industry 
+                                                         42 
+                          Property Subject To Section 19(8) 
+                                                       9560 
+Pulp & Paper Mills (Incl Fine Paper, Tissue & Asphalt Roof) 
+                                                          2 
+                                                    Railway 
+                                                         81 
+        Recreational & Cultural Buildings (Includes Curling 
+                                                        121 
+                              Recreational Clubs, Ski Hills 
+                                                         41 
+                            Residential Dwelling with Suite 
+                                                     360853 
+                               Residential Outbuilding Only 
+                                                        233 
+                                            Restaurant Only 
+                                                        718 
+                                               Retail Strip 
+                                                        890 
+                        Row Housing (Single Unit Ownership) 
+                                                     273404 
+                                 Rubber & Plastics Products 
+                                                          7 
+                        Sand & Gravel (Vacant and Improved) 
+                                                         25 
+                                                   Sawmills 
+                                                         25 
+       Schools & Universities, College Or Technical Schools 
+                                                        265 
+                                                   Sea Food 
+                                                         18 
+                                          Seasonal Dwelling 
+                                                        656 
+                                               Self Storage 
+                                                        215 
+                                 Self-Serve Service Station 
+                                                         54 
+                      Seniors Independent & Assisted Living 
+                                                         88 
+                                      Seniors Licensed Care 
+                                                        100 
+      Seniors Strata - Care, Independent or Assisted Living 
+                                                       1531 
+                                            Service Station 
+                                                        124 
+                                              Shingle Mills 
+                                                         20 
+                                                  Shipyards 
+                                                          4 
+                                Shopping Centre (Community) 
+                                                        392 
+                            Shopping Centre (Neighbourhood) 
+                                                        522 
+                                 Shopping Centre (Regional) 
+                                                        137 
+                                     Sign Or Billboard Only 
+                                                         11 
+                                     Single Family Dwelling 
+                                                     636208 
+                                               Small Fruits 
+                                                       2230 
+                                      Small fruits (Vacant) 
+                                                        445 
+                                        Soft Drink Bottling 
+                                                          2 
+                             Storage & Warehousing (Closed) 
+                                                      10797 
+                               Storage & Warehousing (Cold) 
+                                                         73 
+                               Storage & Warehousing (Open) 
+                                                        204 
+                               Store(S) And Living Quarters 
+                                                       4490 
+                                       Store(S) And Offices 
+                                                       3870 
+                            Store(S) And Service Commercial 
+                                                       5924 
+                      Stores And/Or Offices With Apartments 
+                                                        652 
+                            Strata Lot (Parking Commercial) 
+                                                        460 
+                           Strata Lot (Parking Residential) 
+                                                        977 
+                         Strata-Lot Residence (Condominium) 
+                                                     640487 
+                       Strata-Lot Self Storage-Business Use 
+                                                         10 
+                      Stratified Operational Facility Areas 
+                                                        525 
+           Stratified Rental Apartment (Frame Construction) 
+                                                       3519 
+         Stratified Rental Apartment (Hi-Rise Construction) 
+                                                        851 
+                                Stratified Rental Townhouse 
+                                                        400 
+                  Telecommunications (Other Than Telephone) 
+                                                         36 
+                                                  Telephone 
+                                                         25 
+                                  Textiles & Knitting Mills 
+                                                          3 
+                                          Theatre Buildings 
+                                                         44 
+     Transportation Equipment Industry (Including Aircraft, 
+                                                         13 
+                                                Tree Fruits 
+                                                         67 
+                                       Tree Fruits (Vacant) 
+                                                          5 
+                                                    Triplex 
+                                                        413 
+                                                Vacant IC&I 
+                                                       1646 
+                       Vacant Residential Less Than 2 Acres 
+                                                       9361 
+                                          Vegetable & Truck 
+                                                        959 
+                                 Vegetable & Truck (Vacant) 
+                                                        145 
+                                 Water Distribution Systems 
+                                                         14 
+                                                     Winery 
+                                                          6 
+                                                Works Yards 
+                                                         28 
+> df <- df[ACTUAL_USE_DESCRIPTION=="Strata-Lot Residence (Condominium)"]
+> print(table(df[,CONVEYANCE_TYPE_DESCRIPTION]))
+
+    Improved Single Property Transaction 
+                                  560371 
+           Multiple Property Transaction 
+                                    2164 
+Reject - Not Suitable for Sales Analysis 
+                                   76113 
+      Vacant Single Property Transaction 
+                                    1839 
+> df <- df[CONVEYANCE_TYPE_DESCRIPTION=="Improved Single Property Transaction"]
+> print(df[1:10,CONVEYANCE_DATE])
+integer64
+ [1] 20120416000000 20070515000000 20041129000000 20150724000000 20010626000000
+ [6] 19980827000000 19970327000000 20200818000000 19931129000000 20110914000000
+> df[,year:=as.numeric(substring(CONVEYANCE_DATE,1,4))]
+> df[,month:=as.numeric(substring(CONVEYANCE_DATE,5,6))]
+> df[,yearQuarter:=year+(ceiling((month)/3)/4)]
+> df <- df[year>=2010]
+> df <- df[!is.na(CONVEYANCE_PRICE)]
+> df <- df[CONVEYANCE_PRICE>quantile(CONVEYANCE_PRICE,0.0001) & CONVEYANCE_PRICE<quantile(CONVEYANCE_PRICE,0.9999)]
+> df[,bMean:=mean(log(CONVEYANCE_PRICE),na.rm=TRUE),by=c("building","yearQuarter")]
+> dv <- df[, .(all=var(log(CONVEYANCE_PRICE)),between=var(bMean),within=var(log(CONVEYANCE_PRICE)-bMean)),by=yearQuarter]
+> dv <- melt(dv, id.vars="yearQuarter", variable.name="type", value.name="var")
+> print(dv)
+     yearQuarter   type        var
+           <num> <fctr>      <num>
+  1:     2012.50    all 0.28386522
+  2:     2015.75    all 0.24928213
+  3:     2020.75    all 0.22963721
+  4:     2011.75    all 0.24062767
+  5:     2017.75    all 0.21854718
+ ---                              
+167:     2015.00 within 0.03672844
+168:     2023.75 within 0.03744174
+169:     2019.00 within 0.04479587
+170:     2023.00 within 0.03641475
+171:     2024.25 within 0.02131214
+> ggplot(dv, aes(x=yearQuarter,y=var,group=type,color=type)) +
++ 	geom_line() +
++ 	geom_point() +
++ 	ggtitle("Variance Decomposition of Log Price") +
++ 	xlab("Year") +
++ 	ylab("Variance") +
++ 	geom_vline(xintercept=2016.75,linetype="dashed",color="red") +
++ 	theme(legend.position="bottom")
+> ggsave("text/variance_decomposition.png")
+Saving 7 x 7 in image
+> 
+> q("no")
 > proc.time()
    user  system elapsed 
-  5.780   0.144   5.920 
+  7.842   0.488   8.583 

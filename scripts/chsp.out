@@ -1,0 +1,300 @@
+
+R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(data.table)
+> library(ggplot2)
+> library(fixest)
+> 
+> df <- fread("data/raw/chsp2022.csv")
+> print(summary(df))
+    REF_DATE        GEO               DGUID           Property type     
+ Min.   :2022   Length:138         Length:138         Length:138        
+ 1st Qu.:2022   Class :character   Class :character   Class :character  
+ Median :2022   Mode  :character   Mode  :character   Mode  :character  
+ Mean   :2022                                                           
+ 3rd Qu.:2022                                                           
+ Max.   :2022                                                           
+                                                                        
+ Period of construction Residency participation  Estimates        
+ Length:138             Length:138              Length:138        
+ Class :character       Class :character        Class :character  
+ Mode  :character       Mode  :character        Mode  :character  
+                                                                  
+                                                                  
+                                                                  
+                                                                  
+     UOM                UOM_ID   SCALAR_FACTOR        SCALAR_ID
+ Length:138         Min.   :81   Length:138         Min.   :0  
+ Class :character   1st Qu.:81   Class :character   1st Qu.:0  
+ Mode  :character   Median :81   Mode  :character   Median :0  
+                    Mean   :81                      Mean   :0  
+                    3rd Qu.:81                      3rd Qu.:0  
+                    Max.   :81                      Max.   :0  
+                                                               
+    VECTOR           COORDINATE            VALUE            STATUS         
+ Length:138         Length:138         Min.   : 420000   Length:138        
+ Class :character   Class :character   1st Qu.: 557500   Class :character  
+ Mode  :character   Mode  :character   Median : 700000   Mode  :character  
+                                       Mean   : 809375                     
+                                       3rd Qu.: 845000                     
+                                       Max.   :3500000                     
+                                       NA's   :26                          
+  SYMBOL        TERMINATED        DECIMALS
+ Mode:logical   Mode:logical   Min.   :0  
+ NA's:138       NA's:138       1st Qu.:0  
+                               Median :0  
+                               Mean   :0  
+                               3rd Qu.:0  
+                               Max.   :0  
+                                          
+> 
+> vv <- df[GEO=="Vancouver, Census metropolitan area (CMA)",log(VALUE),by=c("Residency participation","Period of construction")]
+> vvg <- df[, log(VALUE),by=c("Residency participation","Period of construction","GEO")]
+> # all condos: 830K/710K
+> print(log(830)-log(710))
+[1] 0.1561607
+> print(summary(vv))
+ Residency participation Period of construction       V1       
+ Length:6                Length:6               Min.   :13.49  
+ Class :character        Class :character       1st Qu.:13.52  
+ Mode  :character        Mode  :character       Median :13.59  
+                                                Mean   :13.57  
+                                                3rd Qu.:13.59  
+                                                Max.   :13.64  
+> print(vv)
+                    Residency participation   Period of construction       V1
+                                     <char>                   <char>    <num>
+1: Total, all residency participation types             2011 to 2015 13.50080
+2:                     Resident owners only             2011 to 2015 13.48701
+3:               Non-resident participation             2011 to 2015 13.59237
+4: Total, all residency participation types 2016 to reference period 13.59237
+5:                     Resident owners only 2016 to reference period 13.59237
+6:               Non-resident participation 2016 to reference period 13.64116
+> print(vvg)
+                      Residency participation   Period of construction
+                                       <char>                   <char>
+  1: Total, all residency participation types             2011 to 2015
+  2:                     Resident owners only             2011 to 2015
+  3:               Non-resident participation             2011 to 2015
+  4: Total, all residency participation types 2016 to reference period
+  5:                     Resident owners only 2016 to reference period
+ ---                                                                  
+134:                     Resident owners only             2011 to 2015
+135:               Non-resident participation             2011 to 2015
+136: Total, all residency participation types 2016 to reference period
+137:                     Resident owners only 2016 to reference period
+138:               Non-resident participation 2016 to reference period
+                                           GEO       V1
+                                        <char>    <num>
+  1: Vancouver, Census metropolitan area (CMA) 13.50080
+  2: Vancouver, Census metropolitan area (CMA) 13.48701
+  3: Vancouver, Census metropolitan area (CMA) 13.59237
+  4: Vancouver, Census metropolitan area (CMA) 13.59237
+  5: Vancouver, Census metropolitan area (CMA) 13.59237
+ ---                                                   
+134:                          White Rock, City 13.62918
+135:                          White Rock, City 13.50080
+136:                          White Rock, City 13.95527
+137:                          White Rock, City 13.97251
+138:                          White Rock, City 13.79531
+> print(summary(vvg))
+ Residency participation Period of construction     GEO           
+ Length:138              Length:138             Length:138        
+ Class :character        Class :character       Class :character  
+ Mode  :character        Mode  :character       Mode  :character  
+                                                                  
+                                                                  
+                                                                  
+                                                                  
+       V1       
+ Min.   :12.95  
+ 1st Qu.:13.23  
+ Median :13.46  
+ Mean   :13.51  
+ 3rd Qu.:13.65  
+ Max.   :15.07  
+ NA's   :26     
+> vvg <- dcast(vvg, GEO+ `Period of construction` ~ `Residency participation` , value.var="V1")
+> print(summary(vvg[,`Resident owners only`-`Non-resident participation`]))
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max.     NA's 
+-0.11411 -0.02606  0.00000  0.02089  0.04424  0.24116       10 
+> print(vvg)
+Key: <GEO, Period of construction>
+                                                      GEO
+                                                   <char>
+ 1:                                       Anmore, Village
+ 2:                                       Anmore, Village
+ 3:                                     Belcarra, Village
+ 4:                                     Belcarra, Village
+ 5:                     Bowen Island, Island municipality
+ 6:                     Bowen Island, Island municipality
+ 7:                                         Burnaby, City
+ 8:                                         Burnaby, City
+ 9:                                       Coquitlam, City
+10:                                       Coquitlam, City
+11:                          Delta, District municipality
+12:                          Delta, District municipality
+13: Greater Vancouver A, Regional district electoral area
+14: Greater Vancouver A, Regional district electoral area
+15:                                         Langley, City
+16:                                         Langley, City
+17:                        Langley, District municipality
+18:                        Langley, District municipality
+19:                                    Lions Bay, Village
+20:                                    Lions Bay, Village
+21:                                     Maple Ridge, City
+22:                                     Maple Ridge, City
+23:                                 New Westminster, City
+24:                                 New Westminster, City
+25:                                 North Vancouver, City
+26:                                 North Vancouver, City
+27:                North Vancouver, District municipality
+28:                North Vancouver, District municipality
+29:                                    Pitt Meadows, City
+30:                                    Pitt Meadows, City
+31:                                  Port Coquitlam, City
+32:                                  Port Coquitlam, City
+33:                                      Port Moody, City
+34:                                      Port Moody, City
+35:                                        Richmond, City
+36:                                        Richmond, City
+37:                                          Surrey, City
+38:                                          Surrey, City
+39:             Vancouver, Census metropolitan area (CMA)
+40:             Vancouver, Census metropolitan area (CMA)
+41:                                       Vancouver, City
+42:                                       Vancouver, City
+43:                 West Vancouver, District municipality
+44:                 West Vancouver, District municipality
+45:                                      White Rock, City
+46:                                      White Rock, City
+                                                      GEO
+      Period of construction Non-resident participation Resident owners only
+                      <char>                      <num>                <num>
+ 1:             2011 to 2015                         NA                   NA
+ 2: 2016 to reference period                         NA                   NA
+ 3:             2011 to 2015                         NA                   NA
+ 4: 2016 to reference period                         NA                   NA
+ 5:             2011 to 2015                         NA                   NA
+ 6: 2016 to reference period                         NA                   NA
+ 7:             2011 to 2015                   13.45884             13.44445
+ 8: 2016 to reference period                   13.56705             13.54107
+ 9:             2011 to 2015                   13.35348             13.33747
+10: 2016 to reference period                   13.38473             13.38473
+11:             2011 to 2015                   13.50080             13.45884
+12: 2016 to reference period                   13.33747             13.33747
+13:             2011 to 2015                   13.78505             13.81551
+14: 2016 to reference period                   13.98102             13.96393
+15:             2011 to 2015                   13.01700             12.99453
+16: 2016 to reference period                   13.12236             13.23569
+17:             2011 to 2015                   13.12236             13.18063
+18: 2016 to reference period                   13.21767             13.45884
+19:             2011 to 2015                         NA                   NA
+20: 2016 to reference period                         NA                   NA
+21:             2011 to 2015                   12.94801             12.99453
+22: 2016 to reference period                   13.12236             13.32121
+23:             2011 to 2015                   13.27078             13.27078
+24: 2016 to reference period                   13.33747             13.32121
+25:             2011 to 2015                   13.66469             13.64116
+26: 2016 to reference period                   13.82546             13.78505
+27:             2011 to 2015                   13.55415             13.52783
+28: 2016 to reference period                   13.78505             13.69898
+29:             2011 to 2015                         NA             13.19932
+30: 2016 to reference period                         NA             13.18063
+31:             2011 to 2015                   13.18063             13.16158
+32: 2016 to reference period                   13.14217             13.16158
+33:             2011 to 2015                   13.51441             13.55415
+34: 2016 to reference period                   13.38473             13.35348
+35:             2011 to 2015                   13.47302             13.47302
+36: 2016 to reference period                   13.54107             13.57979
+37:             2011 to 2015                   13.01700             13.06049
+38: 2016 to reference period                   13.12236             13.19932
+39:             2011 to 2015                   13.59237             13.48701
+40: 2016 to reference period                   13.64116             13.59237
+41:             2011 to 2015                   13.83531             13.72120
+42: 2016 to reference period                   13.83531             13.79531
+43:             2011 to 2015                   14.41983             14.42528
+44: 2016 to reference period                   14.84513             15.06827
+45:             2011 to 2015                   13.50080             13.62918
+46: 2016 to reference period                   13.79531             13.97251
+      Period of construction Non-resident participation Resident owners only
+    Total, all residency participation types
+                                       <num>
+ 1:                                       NA
+ 2:                                       NA
+ 3:                                       NA
+ 4:                                       NA
+ 5:                                       NA
+ 6:                                       NA
+ 7:                                 13.44445
+ 8:                                 13.54107
+ 9:                                 13.33747
+10:                                 13.38473
+11:                                 13.45884
+12:                                 13.33747
+13:                                 13.80546
+14:                                 13.96393
+15:                                 13.01700
+16:                                 13.23569
+17:                                 13.18063
+18:                                 13.44445
+19:                                       NA
+20:                                       NA
+21:                                 12.99453
+22:                                 13.32121
+23:                                 13.27078
+24:                                 13.32121
+25:                                 13.64116
+26:                                 13.78505
+27:                                 13.52783
+28:                                 13.71015
+29:                                 13.19932
+30:                                 13.18063
+31:                                 13.16158
+32:                                 13.16158
+33:                                 13.55415
+34:                                 13.35348
+35:                                 13.47302
+36:                                 13.57979
+37:                                 13.06049
+38:                                 13.19932
+39:                                 13.50080
+40:                                 13.59237
+41:                                 13.73213
+42:                                 13.80546
+43:                                 14.42528
+44:                                 15.06827
+45:                                 13.62918
+46:                                 13.95527
+    Total, all residency participation types
+> 
+> if (2<1) {
++ 	for (p in df[,`Period of construction`]) {
++ 		print(p)
++ 		for (l in df[,GEO]) {
++ 			for (k in unique(df[,`Residency participation`])) {
++ 				print(c(substring(p,1,4),substring(l,1,8),k,df[`Period of construction`==p & GEO==l & `Residency participation`==k,VALUE]))
++ 			}
++ 		}
++ 	}
++ }
+> 
+> proc.time()
+   user  system elapsed 
+  0.402   0.055   0.452 
