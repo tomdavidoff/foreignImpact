@@ -8,7 +8,7 @@ library(ggplot2)
 library(data.table)
 library(openxlsx)
 
-DOSTART <- 1
+DOSTART <- 0
 if (DOSTART==1) {
 	starts <- data.table(year=numeric(),month=numeric(),cma=numeric,starts=numeric())
 	for (y in 2000:2019) {
