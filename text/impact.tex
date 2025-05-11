@@ -3,7 +3,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
-\usepackage[authoryear,backend=biber]{biblatex}
+\usepackage[style=authoryear,backend=biber]{biblatex}
 \addbibresource{impact.bib}
 
 \begin{document}
@@ -68,26 +68,67 @@ taxation adverse effects on housing affordability for locals.
 
 There are several channels through which foreign buyers could have positive
 affordability effects. First, per \textcite{favilukisVanNieuwerburgh}, foreign
-buyers may rent houses to locals. At least in the presence of the Provincial
-and Vancouver empty homes taxes in B.C., over 90\% of foreign owners either
-lived in or rented their property to locals. Of 3,709 foreign owners of empty
-properties in 2018 Speculation Tax data, the top two means of exemption in the
-following year were selling the property (1,413) and renting it out (1,205).
-951 remained subject to the tax.\footnote{\textcite{specTax2019}.}
+buyers may rent houses to locals, particularly in the presence of an empty
+homes tax. 
 
-\begin{itemize}
-	\item To what extent do foreign buyers leave homes empty, with and without empty homes taxes?
-	\item Do foreign buyers far outbid local buyers for the most luxurious units in new buildings, and do those units drive profitability importantly in new construction?
-	\item Did condo starts or presales underperform after foreign buyers were discouraged through empty homes and foreign buyer taxes and flip taxes?
-\end{itemize}
+Second, foreign buyers may purchase condominiums in the presale phase of
+condominium development and then assign their contracts prior to completion.
+The presence of foreign presale purchasers would raise presale prices,
+encouraging the supply of condominiums, but with no increase in demand for
+occupied space. The net effect of that form of investment should be positive
+for affordability, with an adverse competition effect for locals who wish to
+occupy homes purchased through the presale channel.
+
+A third possibility is that foreign buyers could have a beneficial effect on
+housing affordability for most locals if they have a relative preference for
+quality, and if there is a high degree of vertical differentiation within
+buildings. To see this channel, consider a limiting case in which top-floor
+penthouse units have a high level of quality, and all homes below the penthouse
+have a lower level of quality. For simplicity, assume all buildings are 10
+storeys tall. If steady state, construction supply is infinitely elastic at a
+price of \$X, then if foreign investors are permitted in a market, then the
+price to locals will be:
+
+\begin{align}
+	.9p_{l}(q) + .1p_{f} = X\\
+	p_{l} = \frac{X - .1p_{f}}{.9}.
+\end{align}
+
+Without foreign buyers, the price of lower-quality units would be $p_{l} =
+\frac{X-.1p_{d}}{.9}$. In that way, luxury foreign demand could crowd out local
+luxury demand, but subsidize local consumption of generic units.
 
 \section{Do foreign buyers leave homes empty?}
 
-\textcite{favilukisVanNieuwerburgh} find that foreign buyers do not leave homes empty, but rather rent them out to locals. This is consistent with the finding of \textcite{baker} that foreign buyers are more likely to be landlords than local buyers.
+Per \textcite{specTax2019}, of 3,709 foreign owners deemed subject
+to the empty homes tax in 2018, 1,205 transitioned to renting their homes out
+in 2019, 1,413 sold their property, 951 remained subject to the tax, and only
+66 transitioned to primary residence. 
 
 \section{Do foreign buyers specialize in the most luxurious units within buildings?}
 
-Some 
+Figure \ref{fig:variance_decomposition} presents suggestive evidence on the question of
+whether foreign buyers may offer implicit subsidies to local buyers of
+standard-quality units through abnormally high willingness to pay for higher
+quality units, for example, those with prime views. The data are taken from
+condominium resales in Greater Vancouver between 2010 and 2023, with data
+provided by BC Assessment. The plot measures the year of transactions on the
+horizontal axis. On the vertical axis are measures of the variance of the
+natural logarithm of transaction prices by year. The red line plots the
+variance of all transaction prices. The green plots the variance of mean prices
+across buildings.\footnote{If there were only one transaction for each building
+with a transaction in a given year, the red and green lines would coincide.}
+The blue line plots the mean variance of log transaction prices within
+buildings. 
+
+The dashed vertical line in Figure \ref{fig:variance_decomposition} coincides
+with the imposition of the foreign buyer tax in July, 2016. Consistent with
+foreign buyers demanding more expensive units [CITE], the overall variance of
+prices drops sharply in the years after the tax, consistent with loss of an important luxury
+segment of the market. However, the reduction in price variance appears to be
+almost entirely driven by
+
+\includegraphics[width=\textwidth]{text/variance_decomposition.png}
 
 
 \end{document}

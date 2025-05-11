@@ -1,5 +1,5 @@
 
-R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+R version 4.4.1 (2024-06-14) -- "Race for Your Life"
 Copyright (C) 2024 The R Foundation for Statistical Computing
 Platform: aarch64-apple-darwin20
 
@@ -511,27 +511,60 @@ integer64
  [6] 19980827000000 19970327000000 20200818000000 19931129000000 20110914000000
 > df[,year:=as.numeric(substring(CONVEYANCE_DATE,1,4))]
 > df[,month:=as.numeric(substring(CONVEYANCE_DATE,5,6))]
-> df[,yearQuarter:=year+(ceiling((month)/3)/4)]
-> df <- df[year>=2010]
+> #df[,yearQuarter:=year+(ceiling((month)/3)/4)]
+> df[,yearQuarter:=year]
+> df <- df[year>=2010 & year<2024]
 > df <- df[!is.na(CONVEYANCE_PRICE)]
 > df <- df[CONVEYANCE_PRICE>quantile(CONVEYANCE_PRICE,0.0001) & CONVEYANCE_PRICE<quantile(CONVEYANCE_PRICE,0.9999)]
 > df[,bMean:=mean(log(CONVEYANCE_PRICE),na.rm=TRUE),by=c("building","yearQuarter")]
 > dv <- df[, .(all=var(log(CONVEYANCE_PRICE)),between=var(bMean),within=var(log(CONVEYANCE_PRICE)-bMean)),by=yearQuarter]
 > dv <- melt(dv, id.vars="yearQuarter", variable.name="type", value.name="var")
 > print(dv)
-     yearQuarter   type        var
-           <num> <fctr>      <num>
-  1:     2012.50    all 0.28386522
-  2:     2015.75    all 0.24928213
-  3:     2020.75    all 0.22963721
-  4:     2011.75    all 0.24062767
-  5:     2017.75    all 0.21854718
- ---                              
-167:     2015.00 within 0.03672844
-168:     2023.75 within 0.03744174
-169:     2019.00 within 0.04479587
-170:     2023.00 within 0.03641475
-171:     2024.25 within 0.02131214
+    yearQuarter    type        var
+          <num>  <fctr>      <num>
+ 1:        2012     all 0.23935050
+ 2:        2015     all 0.24150861
+ 3:        2020     all 0.19465139
+ 4:        2011     all 0.24968957
+ 5:        2017     all 0.22412159
+ 6:        2018     all 0.21430913
+ 7:        2016     all 0.27237554
+ 8:        2014     all 0.24490756
+ 9:        2022     all 0.14579802
+10:        2021     all 0.15956427
+11:        2010     all 0.24721292
+12:        2013     all 0.23522289
+13:        2023     all 0.15229497
+14:        2019     all 0.21661104
+15:        2012 between 0.20212983
+16:        2015 between 0.19220461
+17:        2020 between 0.14162462
+18:        2011 between 0.20634921
+19:        2017 between 0.17201489
+20:        2018 between 0.16112344
+21:        2016 between 0.21351807
+22:        2014 between 0.19831742
+23:        2022 between 0.09796177
+24:        2021 between 0.11636798
+25:        2010 between 0.20803058
+26:        2013 between 0.19210027
+27:        2023 between 0.10749123
+28:        2019 between 0.16323229
+29:        2012  within 0.03722067
+30:        2015  within 0.04930400
+31:        2020  within 0.05302678
+32:        2011  within 0.04334036
+33:        2017  within 0.05210670
+34:        2018  within 0.05318569
+35:        2016  within 0.05885747
+36:        2014  within 0.04659015
+37:        2022  within 0.04783625
+38:        2021  within 0.04319628
+39:        2010  within 0.03918234
+40:        2013  within 0.04312262
+41:        2023  within 0.04480374
+42:        2019  within 0.05337875
+    yearQuarter    type        var
 > ggplot(dv, aes(x=yearQuarter,y=var,group=type,color=type)) +
 + 	geom_line() +
 + 	geom_point() +
@@ -546,4 +579,4 @@ Saving 7 x 7 in image
 > q("no")
 > proc.time()
    user  system elapsed 
-  7.842   0.488   8.583 
+  7.665   0.648  11.002 
