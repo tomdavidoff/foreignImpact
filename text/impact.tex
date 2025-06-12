@@ -132,16 +132,51 @@ in foreign participation.
 
 \section{Do foreign buyers leave homes empty?}
 
-In the presence of an empty homes tax, foreign owners who retain their
+Depending on whether empty homes taxes are set at a sufficiently high level or not, foreign buyer taxes may be desirable if foreign owners both (a) tend to leave homes empty for much of the year, rather than occupying them full time or renting them out to locals, and (b) are not responsive to taxes in that behaviour. 
+
+In the presence of the B.C. empty homes tax regime, foreign owners who retain their
 properties most commonly rent them out. Per \textcite{specTax2019}, of 3,709
-foreign owners deemed subject to the empty homes tax in 2018, 1,205
-transitioned to renting their homes out in 2019, 1,413 sold their property, 951
-remained subject to the tax, and only 66 transitioned to using the home as a
-primary residence. 
+foreign owners deemed subject to the empty homes tax in 2018, a large majority no
+longer held empty homes in 2019. 1,205 of these foreign owners subject to the
+Speculation and Vacancy tax transitioned to renting their homes out in 2019,
+1,413 sold their property, 951 remained subject to the tax, and 66 transitioned
+to using the home as a primary residence. 
 
 \section{Do foreign buyers specialize in the most luxurious units within buildings?}
 
-Consider a limiting case, in which foreign buyers demand a high level of quality, and local buyers are indifferent between low- and high-quality apartments. First suppose apartment buildings can be built at a constant cost of \$$c$ per sdquare foot, and that builders will build infinitely many so long as the price they can charge per square foot is greater than $c$. so that Suppose that foreign buyers will only purchase penthouse apartments, and are willing to pay $p_{f}$ for a penthouse unit. Local buyers, are willing to pay a price of $x$
+Consider a limiting case, in which foreign buyers have infinitely elastic demand for high-quality units, at a willingness to pay of $p_{f}$, and no willingness to pay for ordinary units. These high-quality units might represent the penthouses of condo buildings, with all other units being of ordinary quality. Suppose by contrast that local buyers have no additional willingness to pay for penthouse suites and thus pay $p_{l}$ for either penthouses or ordinary units. Suppose that the fraction of all units purchased by foreign buyers is $\alpha$, that fraction will be bounded above by the fraction of homes that are penthouse units and below by zero. In that case, the equation of the supply and demand of homes purchased by locals will be:
+
+\begin{equation}
+	\label{eq:localSD}
+	\left[1-\alpha\right]q_{s}\left(\left[1-\alpha\right]p_{l} + \alpha p_{f}\right) = q_{l}(p_{l}).
+\end{equation}
+
+Developers will supply more units the higher the average price per unit paid by locals and foreign buyers weighted by their share of all units built. Implicitly differentiation of equation \eqref{eq:localSD} indicates that the effect on local prices of a small increase in the foreign buyer share depends is:
+
+\begin{equation}
+	\label{eq:implicit}
+	\frac{dp_{l}}{d\alpha} = -\frac{-q_{s} + \left[1-\alpha\right]q_{s}'\left[p_{f}-p_{l}\right]}{\left[1-\alpha\right]^{2}q_{s}'-q_{l}'}.
+\end{equation}
+
+The denominator of the right hand side of equation \eqref{eq:implicit} is positive as long as supply slopes up and local demand slopes down in price. Defining market average price $\bar{p}\equiv \left[1-\alpha\right]p_{l} + \alpha p_{f}$, the numerator of the right hand side of equation \eqref{eq:implicit} is negative, so that price falls with an increase in the permitted foreign share if:
+
+\begin{equation}
+	\label{eq:sign}
+	\text{sign}\left(\frac{dp_{l}}{d\alpha}\right) = \text{sign}\left(1-\frac{q_{s}'p_{l}}{q_{s}}\frac{p_{f}-p_{l}}{\bar{p}}\left[1-\alpha\right]\right).
+\end{equation}
+
+Equation \eqref{eq:sign} shows that with complete market segmentation as described above, foreign buyers will reduce prices for locals by inducing enough new building to overcome the attendant within-building loss of penthouse units if:
+\begin{itemize}
+\item Supply is sufficiently elastic with respect to price ($\frac{q_{s}'\bar{p}}{q}$ is sufficiently large, so that the sacrifice of luxury units associated with increase foreign purchases is compensated with relatively more new buildings).
+	\item Local demand is sufficiently large relative to foreign demand ($\alpha$ is close to zero, so that most of each induced new building is occupied by locals),
+	\item The difference in valuation for high-quality units between foreign and local buyers is sufficiently large relative to the market price so that new foreign buyers have a large effect on average unit prices in buildings.
+\end{itemize}
+
+units of different quality within buildings is sufficiently large relative to local willingness to pay. If supply is inelastic, or locals and foreign buyers compete for luxury units within buildings, then foreign buyes will crowd out local buyers and raise prices of all units to locals.
+
+
+
+a high level of quality, and local buyers are indifferent between low- and high-quality apartments. First suppose apartment buildings can be built at a constant cost of \$$c$ per sdquare foot, and that builders will build infinitely many so long as the price they can charge per square foot is greater than $c$. so that Suppose that foreign buyers will only purchase penthouse apartments, and are willing to pay $p_{f}$ for a penthouse unit. Local buyers, are willing to pay a price of $x$
 To see this channel, consider a limiting case
 in which top-floor penthouse units have a high level of quality, and all homes
 below the penthouse have a lower level of quality. For simplicity, assume all
