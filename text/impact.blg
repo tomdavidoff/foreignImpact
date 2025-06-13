@@ -1,0 +1,24 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'text/impact.blg'
+[21] biber-darwin:340> INFO - === Thu Jun 12, 2025, 21:22:45
+[26] Biber.pm:420> INFO - Reading 'text/impact.bcf'
+[48] Biber.pm:994> INFO - Found 20 citekeys in bib section 0
+[53] Biber.pm:4463> INFO - Processing section 0
+[56] Biber.pm:4654> INFO - Looking for bibtex file 'impact.bib' for section 0
+[57] bibtex.pm:1713> INFO - LaTeX decoding ...
+[68] bibtex.pm:1519> INFO - Found BibTeX data source 'text/impact.bib'
+[104] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[104] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[104] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[104] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[111] bbl.pm:676> INFO - Writing 'text/impact.bbl' with encoding 'UTF-8'
+[114] bbl.pm:779> INFO - Output to text/impact.bbl
+[114] Biber.pm:131> WARN - legacy month field 'aug' in entry 'LiShenZhang' is not an integer - this will probably not sort properly.
+[114] Biber.pm:131> WARN - Possible typo (case mismatch) between citation and datasource keys: 'FavilukisVanNieuwerburgh' and 'favilukisVanNieuwerburgh' in file 'text/impact.bib'
+[114] Biber.pm:131> WARN - legacy month field 'December' in entry 'specTax2019' is not an integer - this will probably not sort properly.
+[114] Biber.pm:131> WARN - I didn't find a database entry for 'davidoffZheng' (section 0)
+[114] Biber.pm:131> WARN - I didn't find a database entry for 'pavlovImmigrationFlows' (section 0)
+[114] Biber.pm:131> WARN - I didn't find a database entry for 'andalfattoEstimatingEffectMetro2023' (section 0)
+[114] Biber.pm:131> WARN - I didn't find a database entry for 'Goodman' (section 0)
+[114] Biber.pm:131> WARN - I didn't find a database entry for 'FavilukisVanNieuwerburgh' (section 0)
+[114] Biber.pm:133> INFO - WARNINGS: 8

@@ -98,6 +98,128 @@ without crowding out local demand. This would be a variant of the positive
 In the next sections, we review some available economic evidence on the extent to which 
 the channels alluded to above are operative in the Vancouver housing market.
 
+\section{A simple framework for evaluating foreign buyer effects on local housing afforadbility}
+
+As discussed above, foreign buyers may or may not compete for the same units as
+locals, and may rent the homes they own to locals. A simple model provides a
+way to organize data to evaluate likely affordability effects of taxes and
+quantity restrictions on foreign buyers.
+
+Suppose that there is a very large number of potential foreign buyers with
+infinitely elastic demand for housing units at a price of $p_{f}$, assumed
+always higher than the equilibrium willingness to pay among locals that comes
+from the demand curve $q_{l}\left(p_{l}\right)$. The fraction of buyers that
+are foreign $\alpha$ in each building is then determined by a government
+policy, here assumed to be exogenously
+chosen.\footnote{\textcite{FavilukisVanNieuwerburgh} allow foreign demand to be
+affected by the local price and by an time-varying exogenous factor.}
+
+Developers charge different prices to foreign and local buyers. This could
+arise through two channels. First, foreign buyers might demand higher quality
+units, e.g. penthouses for which they have a much greater willingness to pay
+than locals, but have relatively little interest in lower-floor, ordinary
+units. Second, developers might market a fraction of presale units 
+overseas, and the law of one price might not force equality of pricing if
+foreign buyers are constrained in their ability to participate in ordinary
+presale or resale markets.\footnote{An allegedly common practice, see, e.g.
+\texttt{https://vancouver.citynews.ca/2017/06/06/developer-intend-give-overseas-buyers-first-shot-vancouver-project/}.}
+
+The supply of housing units is given by a function $q_{s}\left(\bar{p}\right)$,
+increasing in price. $\bar{p}$ is the average price at which homes are sold,
+$\bar{p} \equiv \left[1-\alpha\right]p_{l} + \alpha p_{f}$.
+
+Some fraction of housing units purchased by foreign buyers are rented out to
+locals, and some presale buyers flip their homes prior to occupancy of
+buildings. Call $z$ the fraction of units owned by foreign buyers that are
+unavailable to locals. The magnitude of $z$ might be taken as a measure of how
+important affordable home ownership is, beyond prioritizing renters. A large
+$z$ value could thus indicate that local consumers renting from foreigners is
+seen as undesirable by policymakers, whereas $z=0$ might indicate that
+converting owner units to rental is not undesirable.\footnote{Indeed,
+policymakers have implemented a range of policies designed to convert homes
+from owner-occupied to rental, such as favorable financing from crown
+corporation CMHC for rental housing and local zoning policies that allow more
+density for purpose-built rental apartments than for condominium buildings.}
+
+Equating supply and demand for local buyers yields the following equation:
+
+\begin{equation}
+	\label{eq:localSD}
+	\left[1-\alpha z\right]q_{s}\left(\left[1-\alpha\right]p_{l} + \alpha p_{f}\right) = q_{l}(p_{l}).
+\end{equation}
+
+Developers will supply more units the higher the average price per unit paid by locals and foreign buyers weighted by their share of all units built. Implicitly differentiation of equation \eqref{eq:localSD} indicates that the effect on local prices of a small increase in the foreign buyer share depends is:
+
+\begin{equation}
+	\label{eq:implicit}
+	\frac{dp_{l}}{d\alpha} = -\frac{-zq_{s} + \left[1-\alpha z\right]q_{s}'\left[p_{f}-p_{l}\right]}{\left[1-\alpha z\right]\left[1-\alpha\right]q_{s}'-q_{l}'}.
+\end{equation}
+
+The denominator of the right hand side of equation \eqref{eq:implicit} is positive as long as supply slopes up and local demand slopes down in price. The numerator of the right hand side of equation \eqref{eq:implicit} is negative, so that price falls with an increase in the permitted foreign share, if:
+
+\begin{equation}
+	\label{eq:sign}
+	\text{sign}\left(\frac{dp_{l}}{d\alpha}\right) = \text{sign}\left(1-\underbrace{\frac{q_{s}'p_{l}}{q_{s}}}_{\text{supply elasticity}}\times\underbrace{\frac{p_{f}-p_{l}}{\bar{p}}}_{\text{foreign price premium}}\times\underbrace{\frac{1-\alpha z}{z}}_{\text{Domestic occupancy intensity}}\right).
+\end{equation}
+
+Summarizing the analysis, allowing a little more foreign buying will improve affordability when:
+
+\begin{itemize}
+	\item The supply of homes is highly responsive to prices.
+	\item Foreign buyers pay much more than locals for apartments in the same buildings.
+	\item Most units in new buildings are occupied by locals in a way that government appreciates, i.e. there are few foreigner owners ($\alpha$ is low), or foreign owners commonly rent to locals and that arrangement is not viewed as objectionable.
+\end{itemize}
+
+\section{Some evidence on the determinants of foreign buyer affordability effects}
+
+\subsection{Supply elasticity}
+
+Out-of-town buyers (somewhat different definitionally from buyers subject to foreign buyer taxes) seem to have been concentrated in housing markets with relatively inelastic supply. \textcite{paixao2021housing} provides a list of Canadian CMAs by housing supply elasticity (estimated from one-year differences in prices and quantities), and Figure \ref{fig:elasticityNonResident} plots that elasticity against non-resident ownership. 
+
+The modest supply elasticities in markets like Toronto and Vancouver (where supply elasticity is low and out-of-town demand relatively high) suggest that foreign ownership may have adverse afforability consequences if not paired with limits on empty homes. It is worth remarking, though, that non-resident ownership was modest in all large Canadian CMAs as of 2018.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{"~/OneDrive - UBC/foreignImpact/text/elasticityOwnership.png"}
+\caption{\label{fig:elasticityNonResident} Non-resident ownership and housing supply elasticity in Canadian CMAs. Sources: \textcite{paixao2021housing} and CHSP table ``Residency participation of residential properties, by property type and period of construction'' for 2018 estimates. (charted values of elasticities merged on CMA names by ChatGPT).}
+\end{figure}
+
+\subsection{Do foreign buyers pay more for units in the same building?}
+
+Equation \eqref{eq:sign} suggests that foreign buyers can have a positive supply effect when the units in which they stimulate supply are largely occupied by locals (where $\alpha z$ is close to zero). If foreign buyers pay higher prices than local primarily because they occupy different buildings than locals, it is not easy to see a positive supply effect for locals.\footnote{\textcite{FavilukisVanNieuwerburgh} account for the job creation effects of the supply effect when foreign buyers purchase homes.}
+
+Foreign buyers might pay more than locals for units in the same building either
+by facing different prices for the same units, or by specializing in
+particularly luxurious units within buildings. We cannot observe whether the
+law of one price is violated, e.g.  through differential presale pricing
+overseas.
+
+There is some scope for answering the question of whether foreign buyers purchase higher quality units within
+buildings than local buyers with available data, at least for the resale
+market, if not for the critical presale market. Figure
+\ref{fig:variance_decomposition} uses data taken from condominium resales in
+Greater Vancouver between 2010 and 2023, provided by BC Assessment.
+The plot measures the year of transactions on the horizontal axis. On the
+vertical axis are measures of the variance of the natural logarithm of
+transaction prices by year. The red line plots the variance of all transaction
+prices. The green plots the variance of mean prices across
+buildings.\footnote{If there were only one transaction for each building with a
+transaction in a given year, the red and green lines would coincide.} The blue
+line plots the mean variance of log transaction prices within buildings. 
+
+The dashed vertical line in Figure \ref{fig:variance_decomposition} coincides
+with the imposition of the foreign buyer tax in July, 2016. Consistent with
+foreign buyers demanding more expensive units (as non-resident buyers do in the
+CHSP data),\footnote{See also  the overall variance of prices drops sharply in the years after the
+tax, consistent with loss of an important luxury segment of the market.
+However, the reduction in price variance appears to be almost entirely driven
+by
+
+\begin{figure}
+\includegraphics[width=\textwidth]{"~/OneDrive - UBC/foreignImpact/text/variance_decomposition.png"}
+\end{figure}
+
+
 \section{Stock and flow of foreign purchases in Greater Vancouver}
 
 For the years starting in 2018, the Canadian Housing Statistics Program has used its access to ownership data on the universe of Canadian residences to publish statistics on ownership by residency status in Canada. This is an approximation of foreign ownership, because some owners who live overseas are Canadian citizens or permanent residents, and hence exempt from foreign buyer taxes. Also, some Canadian residents are not yet landed immigrants, and hence are subject to the foreign buyer tax. Thus CHSP represents an approximation of the stock of ``foreign'' ownership over time. Unfortunately, the stock measure is not readily available prior to 2018. Between 2018 and 2022, the number of non-resident owners in the Vancouver Census Metropolitan Area grew from 24,135 to 26,350, but fell from 9.6\% to 9.0\%.
@@ -142,79 +264,10 @@ Speculation and Vacancy tax transitioned to renting their homes out in 2019,
 1,413 sold their property, 951 remained subject to the tax, and 66 transitioned
 to using the home as a primary residence. 
 
-\section{Do foreign buyers specialize in the most luxurious units within buildings?}
+\subsection{Presale flips}
 
-Consider a limiting case, in which foreign buyers have infinitely elastic demand for high-quality units, at a willingness to pay of $p_{f}$, and no willingness to pay for ordinary units. These high-quality units might represent the penthouses of condo buildings, with all other units being of ordinary quality. Suppose by contrast that local buyers have no additional willingness to pay for penthouse suites and thus pay $p_{l}$ for either penthouses or ordinary units. Suppose that the fraction of all units purchased by foreign buyers is $\alpha$, that fraction will be bounded above by the fraction of homes that are penthouse units and below by zero. In that case, the equation of the supply and demand of homes purchased by locals will be:
+Another politically unpopular group of housing investors ... that is British Columbia has implemented an additional tax on profits from capital gains on homes held for less than two years. That tax applies also to flipping presale contracts
 
-\begin{equation}
-	\label{eq:localSD}
-	\left[1-\alpha\right]q_{s}\left(\left[1-\alpha\right]p_{l} + \alpha p_{f}\right) = q_{l}(p_{l}).
-\end{equation}
-
-Developers will supply more units the higher the average price per unit paid by locals and foreign buyers weighted by their share of all units built. Implicitly differentiation of equation \eqref{eq:localSD} indicates that the effect on local prices of a small increase in the foreign buyer share depends is:
-
-\begin{equation}
-	\label{eq:implicit}
-	\frac{dp_{l}}{d\alpha} = -\frac{-q_{s} + \left[1-\alpha\right]q_{s}'\left[p_{f}-p_{l}\right]}{\left[1-\alpha\right]^{2}q_{s}'-q_{l}'}.
-\end{equation}
-
-The denominator of the right hand side of equation \eqref{eq:implicit} is positive as long as supply slopes up and local demand slopes down in price. Defining market average price $\bar{p}\equiv \left[1-\alpha\right]p_{l} + \alpha p_{f}$, the numerator of the right hand side of equation \eqref{eq:implicit} is negative, so that price falls with an increase in the permitted foreign share if:
-
-\begin{equation}
-	\label{eq:sign}
-	\text{sign}\left(\frac{dp_{l}}{d\alpha}\right) = \text{sign}\left(1-\frac{q_{s}'p_{l}}{q_{s}}\frac{p_{f}-p_{l}}{\bar{p}}\left[1-\alpha\right]\right).
-\end{equation}
-
-Equation \eqref{eq:sign} shows that with complete market segmentation as described above, foreign buyers will reduce prices for locals by inducing enough new building to overcome the attendant within-building loss of penthouse units if:
-\begin{itemize}
-\item Supply is sufficiently elastic with respect to price ($\frac{q_{s}'\bar{p}}{q}$ is sufficiently large, so that the sacrifice of luxury units associated with increase foreign purchases is compensated with relatively more new buildings).
-	\item Local demand is sufficiently large relative to foreign demand ($\alpha$ is close to zero, so that most of each induced new building is occupied by locals),
-	\item The difference in valuation for high-quality units between foreign and local buyers is sufficiently large relative to the market price so that new foreign buyers have a large effect on average unit prices in buildings.
-\end{itemize}
-
-units of different quality within buildings is sufficiently large relative to local willingness to pay. If supply is inelastic, or locals and foreign buyers compete for luxury units within buildings, then foreign buyes will crowd out local buyers and raise prices of all units to locals.
-
-
-
-a high level of quality, and local buyers are indifferent between low- and high-quality apartments. First suppose apartment buildings can be built at a constant cost of \$$c$ per sdquare foot, and that builders will build infinitely many so long as the price they can charge per square foot is greater than $c$. so that Suppose that foreign buyers will only purchase penthouse apartments, and are willing to pay $p_{f}$ for a penthouse unit. Local buyers, are willing to pay a price of $x$
-To see this channel, consider a limiting case
-in which top-floor penthouse units have a high level of quality, and all homes
-below the penthouse have a lower level of quality. For simplicity, assume all
-buildings are 10 storeys tall. If steady state construction supply is
-infinitely elastic at a price of \$X, then if foreign investors are permitted
-in a market, then the price to locals will be:
-
-\begin{align}
-	.9p_{l}(q) + .1p_{f} = X\\
-	p_{l} = \frac{X - .1p_{f}}{.9}.
-\end{align}
-
-Without foreign buyers, the price of lower-quality units would be $p_{l} =
-\frac{X-.1p_{d}}{.9}$. In that way, luxury foreign demand could crowd out local
-luxury demand, but subsidize local consumption of generic units.
-
-Figure \ref{fig:variance_decomposition} presents suggestive evidence on the question of
-whether foreign buyers may offer implicit subsidies to local buyers of
-standard-quality units through abnormally high willingness to pay for higher
-quality units, for example, those with prime views. The data are taken from
-condominium resales in Greater Vancouver between 2010 and 2023, with data
-provided by BC Assessment. The plot measures the year of transactions on the
-horizontal axis. On the vertical axis are measures of the variance of the
-natural logarithm of transaction prices by year. The red line plots the
-variance of all transaction prices. The green plots the variance of mean prices
-across buildings.\footnote{If there were only one transaction for each building
-with a transaction in a given year, the red and green lines would coincide.}
-The blue line plots the mean variance of log transaction prices within
-buildings. 
-
-The dashed vertical line in Figure \ref{fig:variance_decomposition} coincides
-with the imposition of the foreign buyer tax in July, 2016. Consistent with
-foreign buyers demanding more expensive units [CITE], the overall variance of
-prices drops sharply in the years after the tax, consistent with loss of an important luxury
-segment of the market. However, the reduction in price variance appears to be
-almost entirely driven by
-
-\includegraphics[width=\textwidth]{text/variance_decomposition.png}
 
 
 \end{document}
