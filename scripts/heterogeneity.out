@@ -1,6 +1,6 @@
 
-R version 4.4.0 (2024-04-24) -- "Puppy Cup"
-Copyright (C) 2024 The R Foundation for Statistical Computing
+R version 4.5.0 (2025-04-11) -- "How About a Twenty-Six"
+Copyright (C) 2025 The R Foundation for Statistical Computing
 Platform: aarch64-apple-darwin20
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -590,8 +590,114 @@ Saving 7 x 7 in image
 > ggsave("text/variance_decompositionWithin.png")
 Saving 7 x 7 in image
 > 
+> # check condos 2018
+> d18 <- fread("data/raw/chsp2018muni.csv")
+> print(summary(d18))
+    REF_DATE        GEO               DGUID           Property type     
+ Min.   :2018   Length:506         Length:506         Length:506        
+ 1st Qu.:2018   Class :character   Class :character   Class :character  
+ Median :2018   Mode  :character   Mode  :character   Mode  :character  
+ Mean   :2018                                                           
+ 3rd Qu.:2018                                                           
+ Max.   :2018                                                           
+                                                                        
+ Period of construction Residency participation  Estimates        
+ Length:506             Length:506              Length:506        
+ Class :character       Class :character        Class :character  
+ Mode  :character       Mode  :character        Mode  :character  
+                                                                  
+                                                                  
+                                                                  
+                                                                  
+     UOM                UOM_ID   SCALAR_FACTOR        SCALAR_ID
+ Length:506         Min.   :81   Length:506         Min.   :0  
+ Class :character   1st Qu.:81   Class :character   1st Qu.:0  
+ Mode  :character   Median :81   Mode  :character   Median :0  
+                    Mean   :81                      Mean   :0  
+                    3rd Qu.:81                      3rd Qu.:0  
+                    Max.   :81                      Max.   :0  
+                                                               
+    VECTOR           COORDINATE            VALUE            STATUS         
+ Length:506         Length:506         Min.   : 148000   Length:506        
+ Class :character   Class :character   1st Qu.: 370000   Class :character  
+ Mode  :character   Mode  :character   Median : 520000   Mode  :character  
+                                       Mean   : 612168                     
+                                       3rd Qu.: 740000                     
+                                       Max.   :2800000                     
+                                       NA's   :209                         
+  SYMBOL        TERMINATED        DECIMALS
+ Mode:logical   Mode:logical   Min.   :0  
+ NA's:506       NA's:506       1st Qu.:0  
+                               Median :0  
+                               Mean   :0  
+                               3rd Qu.:0  
+                               Max.   :0  
+                                          
+> print(d18[GEO=="Vancouver, Census metropolitan area (CMA)" & `Period of construction`=="Total, all periods of construction",.(VALUE,`Residency participation`)])
+    VALUE    Residency participation
+    <int>                     <char>
+1: 630000       Resident owners only
+2: 790000 Non-resident participation
+> d18 <- d18[GEO!="Vancouver, Census metropolitan area (CMA)" & `Period of construction`!="Total, all periods of construction"]
+> print(feols(log(VALUE) ~ i(`Residency participation`),data=d18[!is.na(`Residency participation`)]))
+NOTE: 200 observations removed because of NA values (LHS: 200).
+OLS estimation, Dep. Var.: log(VALUE)
+Observations: 240
+Standard-errors: IID 
+                                               Estimate Std. Error    t value
+(Intercept)                                   13.210039   0.050840 259.837518
+Residency participation::Resident owners only -0.064918   0.068039  -0.954131
+                                               Pr(>|t|)    
+(Intercept)                                   < 2.2e-16 ***
+Residency participation::Resident owners only   0.34099    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 0.52124   Adj. R2: -3.752e-4
+> print(feols(log(VALUE) ~ i(`Residency participation`)|GEO,data=d18[!is.na(`Residency participation`)]))
+NOTE: 200 observations removed because of NA values (LHS: 200).
+OLS estimation, Dep. Var.: log(VALUE)
+Observations: 240
+Fixed-effects: GEO: 18
+Standard-errors: Clustered (GEO) 
+                                               Estimate Std. Error   t value
+Residency participation::Resident owners only -0.017952   0.025049 -0.716677
+                                              Pr(>|t|) 
+Residency participation::Resident owners only   0.4833 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 0.270149     Adj. R2: 0.710613
+                 Within R2: 0.00108 
+> print(feols(log(VALUE) ~ i(`Residency participation`)|`Period of construction`,data=d18[!is.na(`Residency participation`)]))
+NOTE: 200 observations removed because of NA values (LHS: 200).
+OLS estimation, Dep. Var.: log(VALUE)
+Observations: 240
+Fixed-effects: `Period of construction`: 9
+Standard-errors: Clustered (`Period of construction`) 
+                                               Estimate Std. Error  t value
+Residency participation::Resident owners only -0.063822   0.035179 -1.81421
+                                              Pr(>|t|) 
+Residency participation::Resident owners only   0.1072 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 0.473003     Adj. R2: 0.14756 
+                 Within R2: 0.004366
+> print(feols(log(VALUE) ~ i(`Residency participation`)|GEO+`Period of construction`,data=d18[!is.na(`Residency participation`)]))
+NOTE: 200 observations removed because of NA values (LHS: 200).
+OLS estimation, Dep. Var.: log(VALUE)
+Observations: 240
+Fixed-effects: GEO: 18,  `Period of construction`: 9
+Standard-errors: Clustered (GEO) 
+                                              Estimate Std. Error  t value
+Residency participation::Resident owners only 0.006836    0.02059 0.332007
+                                              Pr(>|t|) 
+Residency participation::Resident owners only  0.74394 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 0.148998     Adj. R2: 0.908664
+                 Within R2: 4.993e-4
+> 
 > 
 > q("no")
 > proc.time()
    user  system elapsed 
-  8.740   0.427   9.166 
+ 18.951   7.272   6.735 

@@ -86,6 +86,16 @@ ggsave("text/variance_decompositionNew.png")
 ggplot(dz,aes(x=yearQuarter,y=within/all))+geom_line()+geom_point()
 ggsave("text/variance_decompositionWithin.png")
 
+# check condos 2018
+d18 <- fread("data/raw/chsp2018muni.csv")
+print(summary(d18))
+print(d18[GEO=="Vancouver, Census metropolitan area (CMA)" & `Period of construction`=="Total, all periods of construction",.(VALUE,`Residency participation`)])
+d18 <- d18[GEO!="Vancouver, Census metropolitan area (CMA)" & `Period of construction`!="Total, all periods of construction"]
+print(feols(log(VALUE) ~ i(`Residency participation`),data=d18[!is.na(`Residency participation`)]))
+print(feols(log(VALUE) ~ i(`Residency participation`)|GEO,data=d18[!is.na(`Residency participation`)]))
+print(feols(log(VALUE) ~ i(`Residency participation`)|`Period of construction`,data=d18[!is.na(`Residency participation`)]))
+print(feols(log(VALUE) ~ i(`Residency participation`)|GEO+`Period of construction`,data=d18[!is.na(`Residency participation`)]))
+
 
 q("no")
 

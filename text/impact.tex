@@ -7,7 +7,9 @@
 \addbibresource{impact.bib}
 
 \begin{document}
-\title{Foreign Buyer Revisionism}
+
+\title{Foreign buyers and local affordability: indicators from Vancouver}
+\author{Thomas Davidoff\\Sauder School of Business, UBC}
 
 \section{Introduction}
 
@@ -22,10 +24,10 @@ has also fueled worries about Canadians being priced out of housing markets in
 cities and towns across the country.''\footnote{\textcite{gOC}.}
 
 There are theoretical and empirical reasons to expect foreign buyer taxes to
-succeed in bringing down local housing prices, many of which are detailed in a
+succeed in reducing local housing prices, many of which are detailed in a
 comprehensive study by \textcite{favilukisVanNieuwerburgh}. The disincentive to
 purchase homes should reduce the number of buyers considering purchasing
-properties and lower willigness to pay among remaining foreign buyers. This
+properties and lower willingness to pay among remaining foreign buyers. This
 reduction in prices hurts landlords and incumbent property owners through lost
 property value and rents, but makes home ownership more affordable for locals
 who do not yet own homes. There may be an associated loss of construction jobs,
@@ -247,12 +249,12 @@ in within-building price variance.
 Figure \ref{fig:varianceDecompositionNew} provides a bit more support for the
 notion that foreign buyers drive within-building price variation. There, data
 are restricted to buildings less than five years old, as foreign buyers may
-have been concentrated in new buildings and new building prices may be more
-salient to the presale pricing that presumably drives developer supply choices.
-While there is not a clear effect of the tax \emph{per se}, it is clear that
-the share of all price variation explained by within-building variance was
-growing prior to the implementation of the tax, at the same time that foreign
-buyers was likely growing.
+have been concentrated in new buildings (as non-resident buyers surely are) and
+new building prices may be more salient to the presale pricing that presumably
+drives developer supply choices.  While there is not a clear effect of the tax
+\emph{per se}, it is clear that the share of all price variation explained by
+within-building variance was growing prior to the implementation of the tax, at
+the same time that foreign buyers was likely growing.
 
 \begin{figure}
 \caption{\label{fig:varianceDecompositionNew} Variance decomposition of log transaction prices in Greater Vancouver, 2010-2023, transactions in buildings less than five years old at time of sale (but resale transactions only) only.}
@@ -263,14 +265,29 @@ Another indicator of within-building versus between price variation comes from
 CHSP data comparing assessed values of properties owned by resident versus
 non-resident owners. While we cannot observe building-level data, we can ask
 what fraction of price differences in the value of units owned by non-residents
-versus residents is explained by municipalities in Metro Vancouver.
+versus residents is explained by variation across municipalities, versus
+within, and by non-residents' propensity to own newer homes. Overall, among condominiums in the Vancouver CMA, non-residents' have a mean value of \$790,000 versus \$630,000 for residents of Canada, a difference of over 25\%.
+
+However, in a regression of log mean value by period of construction and municipality on dummies for municipality, so conditioning on broad location, the coefficient on non-resident owner versus resident owner is just .064, so the large majority of value is explained by location. Adding dummies for ranges of years in which buildings were completed reduces the estimated log difference between residents and non-residents to just .017. Thus, within buildings of the same age in the same general location, non-residents own units that are roughly identical in value to residents, leaving little scope for extra payment for fancier units (differences in price paid in preconstruction would not show up in these assessed values).
+
+The fact that non-residents own newer units than residents might be seen as a form of differentiation in quality within buildings, in that if residents have less willingness to pay for new units than non-residents, non-residents may stimulate supply by paying more for new units that drive supply, leaving older units to resident buyers over time.\footnote{A caveat is that some of the difference in age of property owned may be attributable to non-resident purchases growing over time. If the order of controls is reversed, in a regression of log mean value on just period of construction dummies, the coefficient on non-resident ownership is -.065, so the difference in condo age explains as much of the value difference as municipality, and is unlikely to be mostly explained by differential dates of purchase.}
 
 \section{Stock and flow of foreign purchases in Greater Vancouver}
 
-For the years starting in 2018, the Canadian Housing Statistics Program has used its access to ownership data on the universe of Canadian residences to publish statistics on ownership by residency status in Canada. This is an approximation of foreign ownership, because some owners who live overseas are Canadian citizens or permanent residents, and hence exempt from foreign buyer taxes. Also, some Canadian residents are not yet landed immigrants, and hence are subject to the foreign buyer tax. Thus CHSP represents an approximation of the stock of ``foreign'' ownership over time. Unfortunately, the stock measure is not readily available prior to 2018. Between 2018 and 2022, the number of non-resident owners in the Vancouver Census Metropolitan Area grew from 24,135 to 26,350, but fell from 9.6\% to 9.0\%.
+For the years starting in 2018, the Canadian Housing Statistics Program has
+used its access to ownership data on the universe of Canadian residences to
+publish statistics on ownership by residency status in Canada. This is an
+approximation of foreign ownership, because some owners who live overseas are
+Canadian citizens or permanent residents, and hence exempt from foreign buyer
+taxes. Also, some Canadian residents are not yet landed immigrants, and hence
+are subject to the foreign buyer tax. Thus CHSP represents an approximation of
+the stock of ``foreign'' ownership over time. Unfortunately, the stock measure
+is not readily available prior to 2018. Between 2018 and 2022, the number of
+non-resident owners in the Vancouver Census Metropolitan Area grew from 24,135
+to 26,350, but fell as a share of all owners from 9.6\% to 9.0\%.
 
 The apparent declining stock of foreign ownership as a share of all residences
-is matched by a declining share of the flow into ownership. The B.C. provincial
+(as proxied by nationality) is matched by a declining share of the flow into ownership. The B.C. provincial
 government started collecting data on the nationality of residential property
 buyers shortly before implementing the additional property transfer tax of 15\%
 on foreign buyers in mid-2016. In the month (July) prior to implementation,
@@ -299,20 +316,54 @@ in foreign participation.
 
 \section{Do foreign buyers leave homes empty?}
 
-Depending on whether empty homes taxes are set at a sufficiently high level or not, foreign buyer taxes may be desirable if foreign owners both (a) tend to leave homes empty for much of the year, rather than occupying them full time or renting them out to locals, and (b) are not responsive to taxes in that behaviour. 
+Owners of homes that are not primary residences are subject to extra taxes in
+certain jurisdictions in Ontario and B.C., and foreign owners of Canadian homes
+left vacant more than half of a year are subject to a federal ``Underused
+Housing Tax.'' If these taxes are high enough, units will be rented or sold to
+locals (such that $z$ is close to zero), or the tax revenue should be
+sufficient to leave local residents better off than if the unit were owned by a
+local. However, if empty home taxes are set at a sufficiently low level,
+foreign owners may leave homes empty, and the tax revenue may not be sufficient
+to compensate locals for the loss of housing stock.
 
-In the presence of the B.C. empty homes tax regime, foreign owners who retain their
-properties most commonly rent them out. Per \textcite{specTax2019}, of 3,709
-foreign owners deemed subject to the empty homes tax in 2018, a large majority no
-longer held empty homes in 2019. 1,205 of these foreign owners subject to the
-Speculation and Vacancy tax transitioned to renting their homes out in 2019,
-1,413 sold their property, 951 remained subject to the tax, and 66 transitioned
-to using the home as a primary residence. 
+In the presence of the B.C. empty homes tax regime, foreign, non-resident
+owners who retain their properties most commonly rent them out to locals. Per
+\textcite{specTax2019}, of 3,709 foreign owners deemed subject to the empty
+homes tax in 2018, a large majority no longer held empty homes in 2019. 1,205
+of these foreign owners subject to the Speculation and Vacancy tax transitioned
+to renting their homes out in 2019, 1,413 sold their property, 951 remained
+subject to the tax, and 66 transitioned to using the home as a primary
+residence. Perhaps through ``burnout'' just over half of 1,308 foreign owners
+deemed subject to the tax in 2020 remained subject to the tax in 2021. Overall,
+for the 2021 tax year, roughly 5.5\% of declared foreign owners homes' were
+deemed empty.
 
 \subsection{Presale flips}
 
 Another politically unpopular group of housing investors ... that is British Columbia has implemented an additional tax on profits from capital gains on homes held for less than two years. That tax applies also to flipping presale contracts
 
+\section{Conclusion}
 
+A simple model of foreign purchases reinforces natural intuitions that foreign
+buyers can act to stimulate supply, and thus enhance affordability for locals
+when the foreign buyers are a small part of the market, when they pay more than
+much more than local residents would for homes in the same buildings, when
+housing supply is elastic with respect to price, and when a large fraction of
+foreign-owned homes are rented to locals. In this framework, preconstruction
+purchases by foreign (or domestic) buyers followed by assignment to local
+buyers prior to completion should have purely positive affordability effects.
+
+Foreign buyers in Canada are concentrated in housing markets with relatively
+low supply elasticities, and most of the variation in the value of apartments
+owned by non-residents is explained by location and building age, not different
+unit quality. These facts suggest that in the absence of empty homes taxes,
+foreign buyers are likely to have little benefit to locals through a supply
+channel, unless they face significant price discrimination in the
+preconstruction market. However, in the presence of empty homes taxes, the
+large majority of foreign owners appear to either use homes year round, rent
+them to locals, or sell. Empty homes taxes thus seem likely sufficient to avoid
+adverse affordability effects of foreign ownership.
+
+\printbibliography
 
 \end{document}

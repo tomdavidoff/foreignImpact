@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  13 JUN 2025 16:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  13 JUN 2025 22:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -544,24 +544,24 @@ Package biblatex Info: Reference section=0 on input line 9.
 Package biblatex Info: Reference segment=0 on input line 9.
 
 
-LaTeX Warning: Citation 'davidoffZheng' on page 1 undefined on input line 42.
+LaTeX Warning: Citation 'davidoffZheng' on page 1 undefined on input line 44.
 
 
 LaTeX Warning: Citation 'pavlovImmigrationFlows' on page 1 undefined on input l
-ine 43.
+ine 45.
 
 
 LaTeX Warning: Citation 'andalfattoEstimatingEffectMetro2023' on page 1 undefin
-ed on input line 51.
+ed on input line 53.
 
 
-Overfull \hbox (60.36348pt too wide) in paragraph at lines 40--54
+Overfull \hbox (60.36348pt too wide) in paragraph at lines 42--56
 []\OT1/cmr/m/n/12 . []Li, Shen, and C. Zhang (2023), []Gor-back and Keys (2020)
 , [],
  []
 
 
-Overfull \hbox (58.10092pt too wide) in paragraph at lines 40--54
+Overfull \hbox (58.10092pt too wide) in paragraph at lines 42--56
 \OT1/cmr/m/n/12 to fewer trans-ac-tions and lower prices. []Hart-ley et al. (20
 22), [],
  []
@@ -572,14 +572,14 @@ Overfull \hbox (58.10092pt too wide) in paragraph at lines 40--54
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Citation 'Goodman' on page 2 undefined on input line 82.
+LaTeX Warning: Citation 'Goodman' on page 2 undefined on input line 84.
 
 
 LaTeX Warning: Citation 'FavilukisVanNieuwerburgh' on page 2 undefined on input
- line 115.
+ line 117.
 
 
-Overfull \hbox (289.28668pt too wide) in paragraph at lines 125--125
+Overfull \hbox (289.28668pt too wide) in paragraph at lines 127--127
 [][]\OT1/cmr/m/n/10 An al-legedly com-mon prac-tice, see, e.g. \OT1/cmtt/m/n/10
  https://vancouver.citynews.ca/2017/06/06/developer-intend-give-overseas-buyers
 -first-shot-vancouver-project/\OT1/cmr/m/n/10 .| 
@@ -590,10 +590,10 @@ Overfull \hbox (289.28668pt too wide) in paragraph at lines 125--125
 [2]
 
 LaTeX Warning: Citation 'paixao202housing' on page 3 undefined on input line 18
-3.
+5.
 
 
-LaTeX Warning: Reference `sign' on page 3 undefined on input line 193.
+LaTeX Warning: Reference `sign' on page 3 undefined on input line 195.
 
 
 
@@ -605,60 +605,57 @@ File: ~/OneDrive - UBC/foreignImpact/text/elasticityOwnership.png Graphic file
 (type png)
 <use ~/OneDrive - UBC/foreignImpact/text/elasticityOwnership.png>
 Package pdftex.def Info: ~/OneDrive - UBC/foreignImpact/text/elasticityOwnershi
-p.png  used on input line 199.
+p.png  used on input line 201.
 (pdftex.def)             Requested size: 375.80544pt x 375.81787pt.
 
 
 LaTeX Warning: Citation 'FavilukisVanNieuwerburgh' on page 4 undefined on input
- line 211.
+ line 213.
 
 
 LaTeX Warning: Reference `fig:variance_decomposition' on page 4 undefined on in
-put line 222.
+put line 224.
 
 
 LaTeX Warning: Reference `fig:varianceDecomposition' on page 4 undefined on inp
-ut line 232.
+ut line 234.
 
 
 
 [4]
 
-[5 </Users/davidoff/OneDrive - UBC/foreignImpact/text/elasticityOwnership.png>]
-<~/OneDrive - UBC/foreignImpact/text/variance_decomposition.png, id=32, 505.649
-1pt x 505.6491pt>
+[5 </Users/tdavidof/OneDrive - UBC/foreignImpact/text/elasticityOwnership.png>]
+<~/OneDrive - UBC/foreignImpact/text/variance_decomposition.png, id=32, 2106.87
+125pt x 2106.87125pt>
 File: ~/OneDrive - UBC/foreignImpact/text/variance_decomposition.png Graphic fi
 le (type png)
 <use ~/OneDrive - UBC/foreignImpact/text/variance_decomposition.png>
 Package pdftex.def Info: ~/OneDrive - UBC/foreignImpact/text/variance_decomposi
-tion.png  used on input line 244.
-(pdftex.def)             Requested size: 469.75502pt x 469.77042pt.
-
-LaTeX Warning: Reference `fig:varianceDecompositionNew' on page 6 undefined on 
-input line 247.
-
-<~/OneDrive - UBC/foreignImpact/text/variance_decompositionNew.png, id=33, 505.
-6491pt x 505.6491pt>
+tion.png  used on input line 246.
+(pdftex.def)             Requested size: 469.75502pt x 469.74986pt.
+<~/OneDrive - UBC/foreignImpact/text/variance_decompositionNew.png, id=34, 2106
+.87125pt x 2106.87125pt>
 File: ~/OneDrive - UBC/foreignImpact/text/variance_decompositionNew.png Graphic
  file (type png)
 <use ~/OneDrive - UBC/foreignImpact/text/variance_decompositionNew.png>
 Package pdftex.def Info: ~/OneDrive - UBC/foreignImpact/text/variance_decomposi
-tionNew.png  used on input line 259.
-(pdftex.def)             Requested size: 469.75502pt x 469.77042pt.
-
-LaTeX Warning: Reference `tab:fbt' on page 6 undefined on input line 272.
-
+tionNew.png  used on input line 261.
+(pdftex.def)             Requested size: 469.75502pt x 469.74986pt.
 
 
 [6]
 
-[7 </Users/davidoff/OneDrive - UBC/foreignImpact/text/variance_decomposition.pn
+[7 </Users/tdavidof/OneDrive - UBC/foreignImpact/text/variance_decomposition.pn
 g>]
 
-[8 </Users/davidoff/OneDrive - UBC/foreignImpact/text/variance_decompositionNew
+[8 </Users/tdavidof/OneDrive - UBC/foreignImpact/text/variance_decompositionNew
 .png>]
 
-[9] (./impact.aux)
+[9]
+
+[10]
+
+[11] (./impact.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -667,27 +664,21 @@ L3 programming layer <2025-01-18>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
 Package logreq Info: Writing requests to 'impact.run.xml'.
 \openout1 = `impact.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10837 strings out of 473190
- 203624 string characters out of 5715801
- 1041093 words of memory out of 5000000
- 34010 multiletter control sequences out of 15000+600000
- 565548 words of font info for 60 fonts, out of 8000000 for 9000
+ 10887 strings out of 473190
+ 205193 string characters out of 5715801
+ 1041776 words of memory out of 5000000
+ 34059 multiletter control sequences out of 15000+600000
+ 565849 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,11n,81p,846b,1094s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 66i,11n,81p,848b,1271s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
 usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
@@ -701,10 +692,10 @@ ve/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texliv
 e/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
 /2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/
 2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on impact.pdf (9 pages, 860780 bytes).
+Output written on impact.pdf (11 pages, 893983 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
