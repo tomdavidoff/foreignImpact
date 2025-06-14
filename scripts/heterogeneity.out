@@ -1,5 +1,5 @@
 
-R version 4.4.1 (2024-06-14) -- "Race for Your Life"
+R version 4.4.0 (2024-04-24) -- "Puppy Cup"
 Copyright (C) 2024 The R Foundation for Statistical Computing
 Platform: aarch64-apple-darwin20
 
@@ -41,27 +41,38 @@ Type 'q()' to quit R.
 + 	dd <- fread("~/docs/data/bca/data_advice_REVD24_20240331/bca_folio_descriptions_20240331_REVD24.csv",select=c("FOLIO_ID","ACTUAL_USE_DESCRIPTION","JURISDICTION_CODE","REGIONAL_DISTRICT"))
 + 
 + 	df <- merge(df,dd,by=c("FOLIO_ID","JURISDICTION_CODE"))
++ 	
++ 	di <- data.table(Jurisdiction=numeric(),Roll_Number=character(),MB_Year_Built=numeric())
++ 	# grab inventory
++ 	ilist <- list.files("~/docs/data/bca/Residential_inventory_202401/")
++ 	for (i in 1:length(ilist)) {
++ 		print(ilist[i])
++ 		di <- rbind(di,fread(paste0("~/docs/data/bca/Residential_inventory_202401/",ilist[i]),select=c("Jurisdiction","Roll_Number","MB_Year_Built"),colClasses=c("Roll_Number"="character")))
++ 	}
++ 	df <- merge(df,di,by.x=c("ROLL_NUMBER","JURISDICTION_CODE"),by.y=c("Roll_Number","Jurisdiction"),all.x=TRUE)
++ 
++ 
 + 	fwrite(df,"data/derived/sales.csv")
 + }
 > df <- fread("data/derived/sales.csv")
 > 
 > print(summary(df))
-   FOLIO_ID         JURISDICTION_CODE CONVEYANCE_DATE         
- Length:4769851     Min.   :200.0     Min.   :19010621000000  
- Class :character   1st Qu.:225.0     1st Qu.:19990224000000  
- Mode  :character   Median :312.0     Median :20090522000000  
-                    Mean   :361.6     Mean   :20067963678298  
-                    3rd Qu.:338.0     3rd Qu.:20170511000000  
-                    Max.   :792.0     Max.   :20240313000000  
-                                                              
- CONVEYANCE_PRICE    CONVEYANCE_TYPE_DESCRIPTION ROLL_NUMBER       
- Min.   :0.000e+00   Length:4769851              Length:4769851    
- 1st Qu.:1.340e+05   Class :character            Class :character  
- Median :2.870e+05   Mode  :character            Mode  :character  
- Mean   :5.172e+05                                                 
- 3rd Qu.:5.450e+05                                                 
- Max.   :1.250e+09                                                 
- NA's   :21260                                                     
+ ROLL_NUMBER        JURISDICTION_CODE   FOLIO_ID        
+ Length:4769851     Min.   :200.0     Length:4769851    
+ Class :character   1st Qu.:225.0     Class :character  
+ Mode  :character   Median :312.0     Mode  :character  
+                    Mean   :361.6                       
+                    3rd Qu.:338.0                       
+                    Max.   :792.0                       
+                                                        
+ CONVEYANCE_DATE          CONVEYANCE_PRICE    CONVEYANCE_TYPE_DESCRIPTION
+ Min.   :19010621000000   Min.   :0.000e+00   Length:4769851             
+ 1st Qu.:19990224000000   1st Qu.:1.340e+05   Class :character           
+ Median :20090522000000   Median :2.870e+05   Mode  :character           
+ Mean   :20067963678286   Mean   :5.172e+05                              
+ 3rd Qu.:20170511000000   3rd Qu.:5.450e+05                              
+ Max.   :20240313000000   Max.   :1.250e+09                              
+                          NA's   :21260                                  
  UNIT_NUMBER        STREET_NUMBER      STREET_DIRECTION_PREFIX
  Length:4769851     Length:4769851     Length:4769851         
  Class :character   Class :character   Class :character       
@@ -86,14 +97,14 @@ Type 'q()' to quit R.
                                                                             
                                                                             
                                                                             
-   buildingN       ACTUAL_USE_DESCRIPTION REGIONAL_DISTRICT 
- Min.   :   1.00   Length:4769851         Length:4769851    
- 1st Qu.:   1.00   Class :character       Class :character  
- Median :   1.00   Mode  :character       Mode  :character  
- Mean   :  53.56                                            
- 3rd Qu.:  32.00                                            
- Max.   :6499.00                                            
-                                                            
+   buildingN       ACTUAL_USE_DESCRIPTION REGIONAL_DISTRICT  MB_Year_Built   
+ Min.   :   1.00   Length:4769851         Length:4769851     Min.   :   0    
+ 1st Qu.:   1.00   Class :character       Class :character   1st Qu.:1974    
+ Median :   1.00   Mode  :character       Mode  :character   Median :1989    
+ Mean   :  53.56                                             Mean   :1986    
+ 3rd Qu.:  32.00                                             3rd Qu.:2004    
+ Max.   :6499.00                                             Max.   :2024    
+                                                             NA's   :556062  
 > print(table(df[,REGIONAL_DISTRICT]))
 
    Alberni-Clayoquot      Bulkley-Nechako              Capital 
@@ -507,64 +518,34 @@ Reject - Not Suitable for Sales Analysis
 > df <- df[CONVEYANCE_TYPE_DESCRIPTION=="Improved Single Property Transaction"]
 > print(df[1:10,CONVEYANCE_DATE])
 integer64
- [1] 20120416000000 20070515000000 20041129000000 20150724000000 20010626000000
- [6] 19980827000000 19970327000000 20200818000000 19931129000000 20110914000000
+ [1] 20200325000000 20200403000000 20200608000000 20200402000000 20200325000000
+ [6] 20200325000000 20200403000000 20200403000000 20200326000000 20210322000000
 > df[,year:=as.numeric(substring(CONVEYANCE_DATE,1,4))]
 > df[,month:=as.numeric(substring(CONVEYANCE_DATE,5,6))]
-> #df[,yearQuarter:=year+(ceiling((month)/3)/4)]
-> df[,yearQuarter:=year]
+> df[,yearQuarter:=year+(ceiling((month)/3)/4)]
+> #df[,yearQuarter:=year]
+> df[,age:=year-MB_Year_Built]
 > df <- df[year>=2010 & year<2024]
 > df <- df[!is.na(CONVEYANCE_PRICE)]
 > df <- df[CONVEYANCE_PRICE>quantile(CONVEYANCE_PRICE,0.0001) & CONVEYANCE_PRICE<quantile(CONVEYANCE_PRICE,0.9999)]
 > df[,bMean:=mean(log(CONVEYANCE_PRICE),na.rm=TRUE),by=c("building","yearQuarter")]
 > dv <- df[, .(all=var(log(CONVEYANCE_PRICE)),between=var(bMean),within=var(log(CONVEYANCE_PRICE)-bMean)),by=yearQuarter]
+> dz <- dv
 > dv <- melt(dv, id.vars="yearQuarter", variable.name="type", value.name="var")
 > print(dv)
-    yearQuarter    type        var
-          <num>  <fctr>      <num>
- 1:        2012     all 0.23935050
- 2:        2015     all 0.24150861
- 3:        2020     all 0.19465139
- 4:        2011     all 0.24968957
- 5:        2017     all 0.22412159
- 6:        2018     all 0.21430913
- 7:        2016     all 0.27237554
- 8:        2014     all 0.24490756
- 9:        2022     all 0.14579802
-10:        2021     all 0.15956427
-11:        2010     all 0.24721292
-12:        2013     all 0.23522289
-13:        2023     all 0.15229497
-14:        2019     all 0.21661104
-15:        2012 between 0.20212983
-16:        2015 between 0.19220461
-17:        2020 between 0.14162462
-18:        2011 between 0.20634921
-19:        2017 between 0.17201489
-20:        2018 between 0.16112344
-21:        2016 between 0.21351807
-22:        2014 between 0.19831742
-23:        2022 between 0.09796177
-24:        2021 between 0.11636798
-25:        2010 between 0.20803058
-26:        2013 between 0.19210027
-27:        2023 between 0.10749123
-28:        2019 between 0.16323229
-29:        2012  within 0.03722067
-30:        2015  within 0.04930400
-31:        2020  within 0.05302678
-32:        2011  within 0.04334036
-33:        2017  within 0.05210670
-34:        2018  within 0.05318569
-35:        2016  within 0.05885747
-36:        2014  within 0.04659015
-37:        2022  within 0.04783625
-38:        2021  within 0.04319628
-39:        2010  within 0.03918234
-40:        2013  within 0.04312262
-41:        2023  within 0.04480374
-42:        2019  within 0.05337875
-    yearQuarter    type        var
+     yearQuarter   type        var
+           <num> <fctr>      <num>
+  1:     2020.25    all 0.18486830
+  2:     2020.50    all 0.18787279
+  3:     2021.25    all 0.16613348
+  4:     2022.50    all 0.13780674
+  5:     2022.25    all 0.13192251
+ ---                              
+164:     2012.50 within 0.03089461
+165:     2018.00 within 0.04249443
+166:     2012.25 within 0.02589403
+167:     2012.75 within 0.02418137
+168:     2011.25 within 0.02736596
 > ggplot(dv, aes(x=yearQuarter,y=var,group=type,color=type)) +
 + 	geom_line() +
 + 	geom_point() +
@@ -575,8 +556,42 @@ integer64
 + 	theme(legend.position="bottom")
 > ggsave("text/variance_decomposition.png")
 Saving 7 x 7 in image
+> dfn <- df[age<5]
+> 
+> 
+> dv <- dfn[, .(all=var(log(CONVEYANCE_PRICE)),between=var(bMean),within=var(log(CONVEYANCE_PRICE)-bMean)),by=yearQuarter]
+> dz <- dv
+> dv <- melt(dv, id.vars="yearQuarter", variable.name="type", value.name="var")
+> print(dv)
+     yearQuarter   type        var
+           <num> <fctr>      <num>
+  1:     2020.25    all 0.19237224
+  2:     2020.50    all 0.19276228
+  3:     2021.25    all 0.17904547
+  4:     2022.50    all 0.16405225
+  5:     2022.25    all 0.12033108
+ ---                              
+164:     2013.50 within 0.04431917
+165:     2013.25 within 0.03842199
+166:     2014.50 within 0.05432738
+167:     2015.25 within 0.06657382
+168:     2019.25 within 0.08767423
+> ggplot(dv, aes(x=yearQuarter,y=var,group=type,color=type)) +
++ 	geom_line() +
++ 	geom_point() +
++ 	ggtitle("Variance Decomposition of Log Price New Buildings") +
++ 	xlab("Year") +
++ 	ylab("Variance") +
++ 	geom_vline(xintercept=2016.75,linetype="dashed",color="red") +
++ 	theme(legend.position="bottom")
+> ggsave("text/variance_decompositionNew.png")
+Saving 7 x 7 in image
+> ggplot(dz,aes(x=yearQuarter,y=within/all))+geom_line()+geom_point()
+> ggsave("text/variance_decompositionWithin.png")
+Saving 7 x 7 in image
+> 
 > 
 > q("no")
 > proc.time()
    user  system elapsed 
-  7.665   0.648  11.002 
+  8.740   0.427   9.166 

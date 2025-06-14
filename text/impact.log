@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  12 JUN 2025 21:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  13 JUN 2025 16:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -528,6 +528,13 @@ Package biblatex Warning: The following entry could not be found
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
+(biblatex)                paixao202housing
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
 (biblatex)                pavlovImmigrationFlows
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
@@ -582,6 +589,14 @@ Overfull \hbox (289.28668pt too wide) in paragraph at lines 125--125
 
 [2]
 
+LaTeX Warning: Citation 'paixao202housing' on page 3 undefined on input line 18
+3.
+
+
+LaTeX Warning: Reference `sign' on page 3 undefined on input line 193.
+
+
+
 [3{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }]
 <~/OneDrive - UBC/foreignImpact/text/elasticityOwnership.png, id=25, 505.6491pt
@@ -590,35 +605,60 @@ File: ~/OneDrive - UBC/foreignImpact/text/elasticityOwnership.png Graphic file
 (type png)
 <use ~/OneDrive - UBC/foreignImpact/text/elasticityOwnership.png>
 Package pdftex.def Info: ~/OneDrive - UBC/foreignImpact/text/elasticityOwnershi
-p.png  used on input line 181.
+p.png  used on input line 199.
 (pdftex.def)             Requested size: 375.80544pt x 375.81787pt.
+
+
+LaTeX Warning: Citation 'FavilukisVanNieuwerburgh' on page 4 undefined on input
+ line 211.
+
+
+LaTeX Warning: Reference `fig:variance_decomposition' on page 4 undefined on in
+put line 222.
+
+
+LaTeX Warning: Reference `fig:varianceDecomposition' on page 4 undefined on inp
+ut line 232.
+
 
 
 [4]
 
-[5 </Users/tdavidof/OneDrive - UBC/foreignImpact/text/elasticityOwnership.png>]
-
-LaTeX Warning: Reference `fig:variance_decomposition' on page 6 undefined on in
-put line 238.
-
-
-LaTeX Warning: Reference `fig:variance_decomposition' on page 6 undefined on in
-put line 249.
-
-<~/OneDrive - UBC/foreignImpact/text/variance_decomposition.png, id=33, 505.649
+[5 </Users/davidoff/OneDrive - UBC/foreignImpact/text/elasticityOwnership.png>]
+<~/OneDrive - UBC/foreignImpact/text/variance_decomposition.png, id=32, 505.649
 1pt x 505.6491pt>
 File: ~/OneDrive - UBC/foreignImpact/text/variance_decomposition.png Graphic fi
 le (type png)
 <use ~/OneDrive - UBC/foreignImpact/text/variance_decomposition.png>
 Package pdftex.def Info: ~/OneDrive - UBC/foreignImpact/text/variance_decomposi
-tion.png  used on input line 257.
+tion.png  used on input line 244.
 (pdftex.def)             Requested size: 469.75502pt x 469.77042pt.
+
+LaTeX Warning: Reference `fig:varianceDecompositionNew' on page 6 undefined on 
+input line 247.
+
+<~/OneDrive - UBC/foreignImpact/text/variance_decompositionNew.png, id=33, 505.
+6491pt x 505.6491pt>
+File: ~/OneDrive - UBC/foreignImpact/text/variance_decompositionNew.png Graphic
+ file (type png)
+<use ~/OneDrive - UBC/foreignImpact/text/variance_decompositionNew.png>
+Package pdftex.def Info: ~/OneDrive - UBC/foreignImpact/text/variance_decomposi
+tionNew.png  used on input line 259.
+(pdftex.def)             Requested size: 469.75502pt x 469.77042pt.
+
+LaTeX Warning: Reference `tab:fbt' on page 6 undefined on input line 272.
+
 
 
 [6]
 
-[7 </Users/tdavidof/OneDrive - UBC/foreignImpact/text/variance_decomposition.pn
-g>] (./impact.aux)
+[7 </Users/davidoff/OneDrive - UBC/foreignImpact/text/variance_decomposition.pn
+g>]
+
+[8 </Users/davidoff/OneDrive - UBC/foreignImpact/text/variance_decompositionNew
+.png>]
+
+[9] (./impact.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -626,6 +666,9 @@ L3 programming layer <2025-01-18>
 
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please rerun LaTeX.
@@ -636,10 +679,10 @@ Package logreq Info: Writing requests to 'impact.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10809 strings out of 473190
- 202797 string characters out of 5715801
- 1040059 words of memory out of 5000000
- 33982 multiletter control sequences out of 15000+600000
+ 10837 strings out of 473190
+ 203624 string characters out of 5715801
+ 1041093 words of memory out of 5000000
+ 34010 multiletter control sequences out of 15000+600000
  565548 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,11n,81p,846b,1094s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -658,10 +701,10 @@ ve/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texliv
 e/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
 /2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/
 2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on impact.pdf (7 pages, 469372 bytes).
+Output written on impact.pdf (9 pages, 860780 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 113 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

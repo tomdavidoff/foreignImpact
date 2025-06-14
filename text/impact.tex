@@ -174,9 +174,25 @@ Summarizing the analysis, allowing a little more foreign buying will improve aff
 
 \subsection{Supply elasticity}
 
-Out-of-town buyers (somewhat different definitionally from buyers subject to foreign buyer taxes) seem to have been concentrated in housing markets with relatively inelastic supply. \textcite{paixao2021housing} provides a list of Canadian CMAs by housing supply elasticity (estimated from one-year differences in prices and quantities), and Figure \ref{fig:elasticityNonResident} plots that elasticity against non-resident ownership. 
-
-The modest supply elasticities in markets like Toronto and Vancouver (where supply elasticity is low and out-of-town demand relatively high) suggest that foreign ownership may have adverse afforability consequences if not paired with limits on empty homes. It is worth remarking, though, that non-resident ownership was modest in all large Canadian CMAs as of 2018.
+Foreign buyers can improve affordability through their effective subsidy of new
+supply. That effect will be stronger in markets in which supply is responsive
+to prices. \textcite{paixao2021housing} provides a list of Canadian CMAs by
+housing supply elasticity (estimated from one-year differences in prices and
+quantities), and Figure \ref{fig:elasticityNonResident} plots that elasticity
+against non-resident ownership.\footnote{As in \textcite{paixao202housing}, two
+outliers with extremely high supply elasticites are omitted.} The non-resident
+ownership data is for the year 2018 and comes from the Canadian Housing
+Statistics Program (CHSP) table ``Residency participation of residential
+properties, by property type and period of construction''.  The CHSP measure of
+the fraction of property owners who do not reside in Canada is an imperfect
+approximation of buyers who would be deemed foreign for tax purposes. The
+absolutely and relatively modest supply elasticities in markets like Toronto
+and Vancouver, where foreign buying is concentrated, suggest that foreign
+ownership may have adverse afforability consequences if not paired with limits
+on empty homes (moving $z$ towards zero in the context of equation
+\eqref{sign}). It is worth remarking, though, that non-resident ownership was
+modest in all large Canadian CMAs as of 2018, with Vancouver by far the highest
+level at 6.3\%.
 
 \begin{figure}
 	\centering
@@ -186,7 +202,13 @@ The modest supply elasticities in markets like Toronto and Vancouver (where supp
 
 \subsection{Do foreign buyers pay more for units in the same building?}
 
-Equation \eqref{eq:sign} suggests that foreign buyers can have a positive supply effect when the units in which they stimulate supply are largely occupied by locals (where $\alpha z$ is close to zero). If foreign buyers pay higher prices than local primarily because they occupy different buildings than locals, it is not easy to see a positive supply effect for locals.\footnote{\textcite{FavilukisVanNieuwerburgh} account for the job creation effects of the supply effect when foreign buyers purchase homes.}
+Equation \eqref{eq:sign} suggests that foreign buyers can have a positive
+supply effect when the units in which they stimulate supply are largely
+occupied by locals (where $\alpha z$ is close to zero). If foreign buyers pay
+higher prices than local primarily because they occupy different buildings than
+locals, it is not easy to see a positive supply effect for
+locals.\footnote{\textcite{FavilukisVanNieuwerburgh} account for the job
+creation effects of the supply effect when foreign buyers purchase homes.}
 
 Foreign buyers might pay more than locals for units in the same building either
 by facing different prices for the same units, or by specializing in
@@ -194,11 +216,11 @@ particularly luxurious units within buildings. We cannot observe whether the
 law of one price is violated, e.g.  through differential presale pricing
 overseas.
 
-There is some scope for answering the question of whether foreign buyers purchase higher quality units within
-buildings than local buyers with available data, at least for the resale
-market, if not for the critical presale market. Figure
-\ref{fig:variance_decomposition} uses data taken from condominium resales in
-Greater Vancouver between 2010 and 2023, provided by BC Assessment.
+There is some scope for answering the question of whether foreign buyers
+purchase higher quality units within buildings than local buyers with available
+data, at least for the resale market, if not for the critical presale market.
+Figure \ref{fig:variance_decomposition} uses data taken from condominium
+resales in Greater Vancouver between 2010 and 2023, provided by BC Assessment.
 The plot measures the year of transactions on the horizontal axis. On the
 vertical axis are measures of the variance of the natural logarithm of
 transaction prices by year. The red line plots the variance of all transaction
@@ -207,18 +229,41 @@ buildings.\footnote{If there were only one transaction for each building with a
 transaction in a given year, the red and green lines would coincide.} The blue
 line plots the mean variance of log transaction prices within buildings. 
 
-The dashed vertical line in Figure \ref{fig:variance_decomposition} coincides
+The dashed vertical line in Figure \ref{fig:varianceDecomposition} coincides
 with the imposition of the foreign buyer tax in July, 2016. Consistent with
 foreign buyers demanding more expensive units (as non-resident buyers do in the
-CHSP data),\footnote{See also  the overall variance of prices drops sharply in the years after the
-tax, consistent with loss of an important luxury segment of the market.
-However, the reduction in price variance appears to be almost entirely driven
-by
+CHSP data),\footnote{See also}  the overall variance of prices drops sharply in
+the years after the tax, consistent with loss of an important luxury segment of
+the market.  However, the reduction in price variance appears to be almost
+entirely driven by a reduction in price variance across buildings, rather than
+within buildings. This suggests that foreign buyers did not play a large role
+in within-building price variance.
 
 \begin{figure}
+	\caption{label{fig:varianceDecomposition} Variance decomposition of log resale transaction prices in Greater Vancouver, 2010-2023.}
 \includegraphics[width=\textwidth]{"~/OneDrive - UBC/foreignImpact/text/variance_decomposition.png"}
 \end{figure}
 
+Figure \ref{fig:varianceDecompositionNew} provides a bit more support for the
+notion that foreign buyers drive within-building price variation. There, data
+are restricted to buildings less than five years old, as foreign buyers may
+have been concentrated in new buildings and new building prices may be more
+salient to the presale pricing that presumably drives developer supply choices.
+While there is not a clear effect of the tax \emph{per se}, it is clear that
+the share of all price variation explained by within-building variance was
+growing prior to the implementation of the tax, at the same time that foreign
+buyers was likely growing.
+
+\begin{figure}
+\caption{\label{fig:varianceDecompositionNew} Variance decomposition of log transaction prices in Greater Vancouver, 2010-2023, transactions in buildings less than five years old at time of sale (but resale transactions only) only.}
+\includegraphics[width=\textwidth]{"~/OneDrive - UBC/foreignImpact/text/variance_decompositionNew.png"}
+\end{figure}
+
+Another indicator of within-building versus between price variation comes from
+CHSP data comparing assessed values of properties owned by resident versus
+non-resident owners. While we cannot observe building-level data, we can ask
+what fraction of price differences in the value of units owned by non-residents
+versus residents is explained by municipalities in Metro Vancouver.
 
 \section{Stock and flow of foreign purchases in Greater Vancouver}
 
