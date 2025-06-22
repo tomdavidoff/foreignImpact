@@ -1,0 +1,959 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{andolfatto2024foreignbuyers}{report}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d3206aa89427f2361b2e6d9ffd02b2fe}{%
+           family={Andolfatto},
+           familyi={A\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1e779c956ae884d9ffce03236ed7ef7e}{%
+           family={Rekkas},
+           familyi={R\bibinitperiod},
+           given={Marie},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {SSRN}%
+      }
+      \strng{namehash}{fa216096d610eb04c863dc38b1c1b328}
+      \strng{fullhash}{fa216096d610eb04c863dc38b1c1b328}
+      \strng{fullhashraw}{fa216096d610eb04c863dc38b1c1b328}
+      \strng{bibnamehash}{fa216096d610eb04c863dc38b1c1b328}
+      \strng{authorbibnamehash}{fa216096d610eb04c863dc38b1c1b328}
+      \strng{authornamehash}{fa216096d610eb04c863dc38b1c1b328}
+      \strng{authorfullhash}{fa216096d610eb04c863dc38b1c1b328}
+      \strng{authorfullhashraw}{fa216096d610eb04c863dc38b1c1b328}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{note}{Available at SSRN: \url{https://ssrn.com/abstract=4617778}}
+      \field{title}{Estimating the Effect of Metro Vancouver's 2016 Foreign Buyers Tax on City-Level Real Estate Prices}
+      \field{type}{techreport}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.2139/ssrn.4617778
+      \endverb
+      \verb{urlraw}
+      \verb https://ssrn.com/abstract=4617778
+      \endverb
+      \verb{url}
+      \verb https://ssrn.com/abstract=4617778
+      \endverb
+    \endentry
+    \entry{BadarinzaRamadorai}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2489b26759911f460f5d259636dc0092}{%
+           family={Badarinza},
+           familyi={B\bibinitperiod},
+           given={Cristian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fa4e1da5eb683b29106df168d66af174}{%
+           family={Ramadorai},
+           familyi={R\bibinitperiod},
+           given={Tarun},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{1f0d37bf7c403c95726b0fb6d7ed8f89}
+      \strng{fullhash}{1f0d37bf7c403c95726b0fb6d7ed8f89}
+      \strng{fullhashraw}{1f0d37bf7c403c95726b0fb6d7ed8f89}
+      \strng{bibnamehash}{1f0d37bf7c403c95726b0fb6d7ed8f89}
+      \strng{authorbibnamehash}{1f0d37bf7c403c95726b0fb6d7ed8f89}
+      \strng{authornamehash}{1f0d37bf7c403c95726b0fb6d7ed8f89}
+      \strng{authorfullhash}{1f0d37bf7c403c95726b0fb6d7ed8f89}
+      \strng{authorfullhashraw}{1f0d37bf7c403c95726b0fb6d7ed8f89}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Financial Economics}
+      \field{number}{3}
+      \field{title}{Home Away from Home? Foreign Demand and London House Prices}
+      \field{volume}{130}
+      \field{year}{2018}
+      \field{pages}{532\bibrangedash 555}
+      \range{pages}{24}
+    \endentry
+    \entry{klevenBest}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=5976fd1fd5498a2a8508dad1b6b1cf01}{%
+           family={Best},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=50ce8b4d5b6dfccf1d1ee775377cb356}{%
+           family={Kleven},
+           familyi={K\bibinitperiod},
+           given={Henrik},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f6c412e1a946c848ff75c8da24addf10}
+      \strng{fullhash}{f6c412e1a946c848ff75c8da24addf10}
+      \strng{fullhashraw}{f6c412e1a946c848ff75c8da24addf10}
+      \strng{bibnamehash}{f6c412e1a946c848ff75c8da24addf10}
+      \strng{authorbibnamehash}{f6c412e1a946c848ff75c8da24addf10}
+      \strng{authornamehash}{f6c412e1a946c848ff75c8da24addf10}
+      \strng{authorfullhash}{f6c412e1a946c848ff75c8da24addf10}
+      \strng{authorfullhashraw}{f6c412e1a946c848ff75c8da24addf10}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Review of Economic Studies}
+      \field{number}{1}
+      \field{title}{Housing Market Responses to Transaction Taxes: Evidence From Notches and Stimulus in the U.K.}
+      \field{volume}{85}
+      \field{year}{2018}
+      \field{pages}{157\bibrangedash 193}
+      \range{pages}{37}
+    \endentry
+    \entry{cmhc2025condominium}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=75fdabf02cd1e71fafb4f316fa3102d6}{%
+           family={{Canada Mortgage and Housing Corporation}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {CMHC}%
+      }
+      \strng{namehash}{75fdabf02cd1e71fafb4f316fa3102d6}
+      \strng{fullhash}{75fdabf02cd1e71fafb4f316fa3102d6}
+      \strng{fullhashraw}{75fdabf02cd1e71fafb4f316fa3102d6}
+      \strng{bibnamehash}{75fdabf02cd1e71fafb4f316fa3102d6}
+      \strng{authorbibnamehash}{75fdabf02cd1e71fafb4f316fa3102d6}
+      \strng{authornamehash}{75fdabf02cd1e71fafb4f316fa3102d6}
+      \strng{authorfullhash}{75fdabf02cd1e71fafb4f316fa3102d6}
+      \strng{authorfullhashraw}{75fdabf02cd1e71fafb4f316fa3102d6}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{Accessed: 2025-06-14}
+      \field{title}{Condominium Apartment Market Risks in Toronto and Vancouver}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.cmhc-schl.gc.ca/blog/2025/condominium-apartment-market-risks-toronto-vancouver
+      \endverb
+      \verb{url}
+      \verb https://www.cmhc-schl.gc.ca/blog/2025/condominium-apartment-market-risks-toronto-vancouver
+      \endverb
+    \endentry
+    \entry{citynews2017overseasbuyers}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=19eec2ea7529d1a7d8048e289c9ca7e8}{%
+           family={{CityNews Staff}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {CityNews Vancouver}%
+      }
+      \strng{namehash}{19eec2ea7529d1a7d8048e289c9ca7e8}
+      \strng{fullhash}{19eec2ea7529d1a7d8048e289c9ca7e8}
+      \strng{fullhashraw}{19eec2ea7529d1a7d8048e289c9ca7e8}
+      \strng{bibnamehash}{19eec2ea7529d1a7d8048e289c9ca7e8}
+      \strng{authorbibnamehash}{19eec2ea7529d1a7d8048e289c9ca7e8}
+      \strng{authornamehash}{19eec2ea7529d1a7d8048e289c9ca7e8}
+      \strng{authorfullhash}{19eec2ea7529d1a7d8048e289c9ca7e8}
+      \strng{authorfullhashraw}{19eec2ea7529d1a7d8048e289c9ca7e8}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Accessed: 2025-06-14}
+      \field{title}{Developer intends to give overseas buyers first shot at Vancouver project}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://vancouver.citynews.ca/2017/06/06/developer-intend-give-overseas-buyers-first-shot-vancouver-project/
+      \endverb
+      \verb{url}
+      \verb https://vancouver.citynews.ca/2017/06/06/developer-intend-give-overseas-buyers-first-shot-vancouver-project/
+      \endverb
+    \endentry
+    \entry{DachisDurantonTurner}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=227ff4b5f65838ba7b948af852d43433}{%
+           family={Dachis},
+           familyi={D\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b2b06d270a769f22705c89de5da7eb07}{%
+           family={Duranton},
+           familyi={D\bibinitperiod},
+           given={Gilles},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8eedd774490a8ef31dc9d8d437873f1b}{%
+           family={Turner},
+           familyi={T\bibinitperiod},
+           given={Matthew\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{617dd67271a43f9c5cdd7e2876c11c63}
+      \strng{fullhash}{617dd67271a43f9c5cdd7e2876c11c63}
+      \strng{fullhashraw}{617dd67271a43f9c5cdd7e2876c11c63}
+      \strng{bibnamehash}{617dd67271a43f9c5cdd7e2876c11c63}
+      \strng{authorbibnamehash}{617dd67271a43f9c5cdd7e2876c11c63}
+      \strng{authornamehash}{617dd67271a43f9c5cdd7e2876c11c63}
+      \strng{authorfullhash}{617dd67271a43f9c5cdd7e2876c11c63}
+      \strng{authorfullhashraw}{617dd67271a43f9c5cdd7e2876c11c63}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Geography}
+      \field{number}{2}
+      \field{title}{The effects of land transfer taxes on real estate markets: evidence from a natural experiment in Toronto}
+      \field{volume}{12}
+      \field{year}{2012}
+      \field{pages}{327\bibrangedash 354}
+      \range{pages}{28}
+    \endentry
+    \entry{davidoffLeigh}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=21889839575971af94ed5b0769fee99f}{%
+           family={Davidoff},
+           familyi={D\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=a6bd86a93377a2b34adfa9660bcea5c2}{%
+           family={Leigh},
+           familyi={L\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2d37592cfafff01d5a9d97fb11b59f90}
+      \strng{fullhash}{2d37592cfafff01d5a9d97fb11b59f90}
+      \strng{fullhashraw}{2d37592cfafff01d5a9d97fb11b59f90}
+      \strng{bibnamehash}{2d37592cfafff01d5a9d97fb11b59f90}
+      \strng{authorbibnamehash}{2d37592cfafff01d5a9d97fb11b59f90}
+      \strng{authornamehash}{2d37592cfafff01d5a9d97fb11b59f90}
+      \strng{authorfullhash}{2d37592cfafff01d5a9d97fb11b59f90}
+      \strng{authorfullhashraw}{2d37592cfafff01d5a9d97fb11b59f90}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Economic Record}
+      \field{number}{286}
+      \field{title}{How Do Stamp Duties Affect the Housing Market?}
+      \field{volume}{89}
+      \field{year}{2013}
+      \field{pages}{396\bibrangedash 410}
+      \range{pages}{15}
+    \endentry
+    \entry{davidoffZheng}{report}{}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=d5a1764dcb36f8683837327b4f420c6f}{%
+           family={Davidoff},
+           familyi={D\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=27c170c68b8b86b6dfd6996657ddca05}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Keling},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {University of British Columbia}%
+      }
+      \strng{namehash}{b60a843a84af609d562f1e3819081f87}
+      \strng{fullhash}{b60a843a84af609d562f1e3819081f87}
+      \strng{fullhashraw}{b60a843a84af609d562f1e3819081f87}
+      \strng{bibnamehash}{b60a843a84af609d562f1e3819081f87}
+      \strng{authorbibnamehash}{b60a843a84af609d562f1e3819081f87}
+      \strng{authornamehash}{b60a843a84af609d562f1e3819081f87}
+      \strng{authorfullhash}{b60a843a84af609d562f1e3819081f87}
+      \strng{authorfullhashraw}{b60a843a84af609d562f1e3819081f87}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Foreign Buyer Tax Impacts on Submarkets: Evidence from Canada}
+      \field{type}{Working Paper}
+      \field{year}{2024}
+    \endentry
+    \entry{DuYinZhang}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=f9ff6e6359cad051bf84aba0f7f600f7}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Zaichao},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d9382bd8e9bb382003368d43df414a2}{%
+           family={Yin},
+           familyi={Y\bibinitperiod},
+           given={Hua},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=3a1f1a0016bb4e33e52e9bd0f48cfd33}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lin},
+           giveni={L\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{a239a6befac034fee7939ce19ee3b248}
+      \strng{fullhash}{a239a6befac034fee7939ce19ee3b248}
+      \strng{fullhashraw}{a239a6befac034fee7939ce19ee3b248}
+      \strng{bibnamehash}{a239a6befac034fee7939ce19ee3b248}
+      \strng{authorbibnamehash}{a239a6befac034fee7939ce19ee3b248}
+      \strng{authornamehash}{a239a6befac034fee7939ce19ee3b248}
+      \strng{authorfullhash}{a239a6befac034fee7939ce19ee3b248}
+      \strng{authorfullhashraw}{a239a6befac034fee7939ce19ee3b248}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1051-1377}
+      \field{journaltitle}{Journal of Housing Economics}
+      \field{title}{Foreign buyer taxes and house prices in Canada: A tale of two cities}
+      \field{volume}{55}
+      \field{year}{2022}
+      \field{pages}{101807}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jhe.2021.101807
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1051137721000620
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1051137721000620
+      \endverb
+      \keyw{House price,Foreign buyer tax,Panel program evaluation,RDD}
+    \endentry
+    \entry{favilukisVanNieuwerburgh}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=26331cbdd01b00c0af944bfcc4fd297f}{%
+           family={Favilukis},
+           familyi={F\bibinitperiod},
+           given={Jack},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45855cd80c1bde9d094640ecce3e3382}{%
+           family={Van\bibnamedelima Nieuwerburgh},
+           familyi={V\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Stijn},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bc2799df738b699abc188427bbeaefbc}
+      \strng{fullhash}{bc2799df738b699abc188427bbeaefbc}
+      \strng{fullhashraw}{bc2799df738b699abc188427bbeaefbc}
+      \strng{bibnamehash}{bc2799df738b699abc188427bbeaefbc}
+      \strng{authorbibnamehash}{bc2799df738b699abc188427bbeaefbc}
+      \strng{authornamehash}{bc2799df738b699abc188427bbeaefbc}
+      \strng{authorfullhash}{bc2799df738b699abc188427bbeaefbc}
+      \strng{authorfullhashraw}{bc2799df738b699abc188427bbeaefbc}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Finance}
+      \field{number}{5}
+      \field{title}{Out-of-Town Buyers and City Welfare}
+      \field{volume}{76}
+      \field{year}{2021}
+      \field{pages}{2577\bibrangedash 2638}
+      \range{pages}{62}
+    \endentry
+    \entry{gOC}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=106a3734fb055cef40d87d2fb29f0c15}{%
+           family={Finance\bibnamedelima Canada},
+           familyi={F\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Department},
+           giveni={D\bibinitperiod},
+           givenun=0,
+           prefix={of},
+           prefixi={o\bibinitperiod},
+           prefixun=0}}%
+      }
+      \strng{namehash}{106a3734fb055cef40d87d2fb29f0c15}
+      \strng{fullhash}{106a3734fb055cef40d87d2fb29f0c15}
+      \strng{fullhashraw}{106a3734fb055cef40d87d2fb29f0c15}
+      \strng{bibnamehash}{106a3734fb055cef40d87d2fb29f0c15}
+      \strng{authorbibnamehash}{106a3734fb055cef40d87d2fb29f0c15}
+      \strng{authornamehash}{106a3734fb055cef40d87d2fb29f0c15}
+      \strng{authorfullhash}{106a3734fb055cef40d87d2fb29f0c15}
+      \strng{authorfullhashraw}{106a3734fb055cef40d87d2fb29f0c15}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{note}{Accessed: 2025-05-03}
+      \field{title}{Government announces two-year extension to ban on foreign ownership of Canadian housing}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.canada.ca/en/department-finance/news/2024/02/government-announces-two-year-extension-to-ban-on-foreign-ownership-of-canadian-housing.html
+      \endverb
+      \verb{url}
+      \verb https://www.canada.ca/en/department-finance/news/2024/02/government-announces-two-year-extension-to-ban-on-foreign-ownership-of-canadian-housing.html
+      \endverb
+    \endentry
+    \entry{gellatlyNonresidentOwnershipResidential2017}{report}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=59ebaf5bf42fd25e24a3ea73ece8fa4c}{%
+           family={Gellatly},
+           familyi={G\bibinitperiod},
+           given={Guy},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=71fd0bc626f6e906e5ea3dd6b7df7944}{%
+           family={Morissette},
+           familyi={M\bibinitperiod},
+           given={Rene},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Statistics Canada}%
+      }
+      \strng{namehash}{44422a74231d572d8c246f2dfb8f6a46}
+      \strng{fullhash}{44422a74231d572d8c246f2dfb8f6a46}
+      \strng{fullhashraw}{44422a74231d572d8c246f2dfb8f6a46}
+      \strng{bibnamehash}{44422a74231d572d8c246f2dfb8f6a46}
+      \strng{authorbibnamehash}{44422a74231d572d8c246f2dfb8f6a46}
+      \strng{authornamehash}{44422a74231d572d8c246f2dfb8f6a46}
+      \strng{authorfullhash}{44422a74231d572d8c246f2dfb8f6a46}
+      \strng{authorfullhashraw}{44422a74231d572d8c246f2dfb8f6a46}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{2017078}
+      \field{title}{Non-Resident Ownership of Residential Properties in Toronto and Vancouver: Initial Information from the Canadian Housing Statistics Program}
+      \field{type}{Economic Insights}
+      \field{year}{2017}
+    \endentry
+    \entry{gold2024foreignbuyers}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f383246f8f268544247fa313146b6e1a}{%
+           family={Gold},
+           familyi={G\bibinitperiod},
+           given={Kerry},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{2}{%
+        {The Globe}%
+        {Mail}%
+      }
+      \strng{namehash}{f383246f8f268544247fa313146b6e1a}
+      \strng{fullhash}{f383246f8f268544247fa313146b6e1a}
+      \strng{fullhashraw}{f383246f8f268544247fa313146b6e1a}
+      \strng{bibnamehash}{f383246f8f268544247fa313146b6e1a}
+      \strng{authorbibnamehash}{f383246f8f268544247fa313146b6e1a}
+      \strng{authornamehash}{f383246f8f268544247fa313146b6e1a}
+      \strng{authorfullhash}{f383246f8f268544247fa313146b6e1a}
+      \strng{authorfullhashraw}{f383246f8f268544247fa313146b6e1a}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-06-14}
+      \field{title}{B.C. developers push back on foreign-buyer restrictions}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.theglobeandmail.com/real-estate/vancouver/article-bc-developers-push-back-on-foreign-buyer-restrictions/
+      \endverb
+      \verb{url}
+      \verb https://www.theglobeandmail.com/real-estate/vancouver/article-bc-developers-push-back-on-foreign-buyer-restrictions/
+      \endverb
+    \endentry
+    \entry{gorbackGlobalCapitalLocal2020}{report}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e75a6d530e709d71b3e0181e24543e8d}{%
+           family={Gorback},
+           familyi={G\bibinitperiod},
+           given={Caitlin},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dcd61b93bfd9c559bb1cde6db4b6c045}{%
+           family={Keys},
+           familyi={K\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {NBER}%
+      }
+      \strng{namehash}{b22846a22dd1e5720575e724aef8d8d6}
+      \strng{fullhash}{b22846a22dd1e5720575e724aef8d8d6}
+      \strng{fullhashraw}{b22846a22dd1e5720575e724aef8d8d6}
+      \strng{bibnamehash}{b22846a22dd1e5720575e724aef8d8d6}
+      \strng{authorbibnamehash}{b22846a22dd1e5720575e724aef8d8d6}
+      \strng{authornamehash}{b22846a22dd1e5720575e724aef8d8d6}
+      \strng{authorfullhash}{b22846a22dd1e5720575e724aef8d8d6}
+      \strng{authorfullhashraw}{b22846a22dd1e5720575e724aef8d8d6}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{27370}
+      \field{title}{Global Capital and Local Assets: House Prices, Quantities and Elasticities}
+      \field{type}{Working Paper}
+      \field{year}{2020}
+    \endentry
+    \entry{HartleyForeign}{report}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=e4f44baa0fdc7ca614b55d2c9cdbce5c}{%
+           family={Hartley},
+           familyi={H\bibinitperiod},
+           given={Jonathan\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eadf3d75f307d8734877cf15b0ceb911}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b8da497d810bea3c3b9c5bf02f9df88}{%
+           family={Wachter},
+           familyi={W\bibinitperiod},
+           given={Susan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=07a8175cbba42fbce6344d3c65b9926a}{%
+           family={Zevelev},
+           familyi={Z\bibinitperiod},
+           given={Albert\bibnamedelima Alex},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Stanford}%
+      }
+      \strng{namehash}{fa78e6ee3af426fe2c02dc1a16f28657}
+      \strng{fullhash}{6266e00c1636c1ccf999d2093b2eaa70}
+      \strng{fullhashraw}{6266e00c1636c1ccf999d2093b2eaa70}
+      \strng{bibnamehash}{fa78e6ee3af426fe2c02dc1a16f28657}
+      \strng{authorbibnamehash}{fa78e6ee3af426fe2c02dc1a16f28657}
+      \strng{authornamehash}{fa78e6ee3af426fe2c02dc1a16f28657}
+      \strng{authorfullhash}{6266e00c1636c1ccf999d2093b2eaa70}
+      \strng{authorfullhashraw}{6266e00c1636c1ccf999d2093b2eaa70}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Do Foreign Buyer Taxes Affect House Prices?}
+      \field{type}{techreport}
+      \field{year}{2022}
+    \endentry
+    \entry{hilber2020secondhomes}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=080458669fa638c16c69396dc8a5e9a2}{%
+           family={Hilber},
+           familyi={H\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dcd9178e5bbf242927b2cc1c8f3f22c9}{%
+           family={Schöni},
+           familyi={S\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{726bf9a826fabb47e038be5800613c41}
+      \strng{fullhash}{726bf9a826fabb47e038be5800613c41}
+      \strng{fullhashraw}{726bf9a826fabb47e038be5800613c41}
+      \strng{bibnamehash}{726bf9a826fabb47e038be5800613c41}
+      \strng{authorbibnamehash}{726bf9a826fabb47e038be5800613c41}
+      \strng{authornamehash}{726bf9a826fabb47e038be5800613c41}
+      \strng{authorfullhash}{726bf9a826fabb47e038be5800613c41}
+      \strng{authorfullhashraw}{726bf9a826fabb47e038be5800613c41}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Urban Economics}
+      \field{title}{On the economic impacts of constraining second home investments}
+      \field{volume}{118}
+      \field{year}{2020}
+      \field{pages}{103266}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.jue.2020.103266
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0094119020300371
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0094119020300371
+      \endverb
+    \endentry
+    \entry{kopczukMunroe}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=690f3f056b4ebfad98d24fe6ffa0163c}{%
+           family={Kopczuk},
+           familyi={K\bibinitperiod},
+           given={Wojciech},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=398c566cef4426e09dcd6e811ae824e5}{%
+           family={Munroe},
+           familyi={M\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{99effe70eb66a637efaba53eb8917e34}
+      \strng{fullhash}{99effe70eb66a637efaba53eb8917e34}
+      \strng{fullhashraw}{99effe70eb66a637efaba53eb8917e34}
+      \strng{bibnamehash}{99effe70eb66a637efaba53eb8917e34}
+      \strng{authorbibnamehash}{99effe70eb66a637efaba53eb8917e34}
+      \strng{authornamehash}{99effe70eb66a637efaba53eb8917e34}
+      \strng{authorfullhash}{99effe70eb66a637efaba53eb8917e34}
+      \strng{authorfullhashraw}{99effe70eb66a637efaba53eb8917e34}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Journal: Economic Policy}
+      \field{number}{2}
+      \field{title}{Mansion Tax: The Effect of Transfer Taxes on the Residential Real Estate Market}
+      \field{volume}{7}
+      \field{year}{2015}
+      \field{pages}{214\bibrangedash 257}
+      \range{pages}{44}
+    \endentry
+    \entry{LiShenZhang}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=0ed1b361db7072f06f1618778c48b447}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zhimin},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0cc726b755621064478ab908c164d3a9}{%
+           family={Shen},
+           familyi={S\bibinitperiod},
+           given={Leslie\bibnamedelima Sheng},
+           giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=bc83bf47c0d3cee1ac30384ab7ba861d}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Calvin},
+           giveni={C\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{a03e46964db2c9d2df0ecca9f16eed7e}
+      \strng{fullhash}{a03e46964db2c9d2df0ecca9f16eed7e}
+      \strng{fullhashraw}{a03e46964db2c9d2df0ecca9f16eed7e}
+      \strng{bibnamehash}{a03e46964db2c9d2df0ecca9f16eed7e}
+      \strng{authorbibnamehash}{a03e46964db2c9d2df0ecca9f16eed7e}
+      \strng{authornamehash}{a03e46964db2c9d2df0ecca9f16eed7e}
+      \strng{authorfullhash}{a03e46964db2c9d2df0ecca9f16eed7e}
+      \strng{authorfullhashraw}{a03e46964db2c9d2df0ecca9f16eed7e}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0893-9454}
+      \field{journaltitle}{The Review of Financial Studies}
+      \field{month}{8}
+      \field{number}{3}
+      \field{title}{Local Effects of Global Capital Flows: A China Shock in the U.S. Housing Market}
+      \field{volume}{37}
+      \field{year}{2023}
+      \field{pages}{761\bibrangedash 801}
+      \range{pages}{41}
+      \verb{doi}
+      \verb 10.1093/rfs/hhad067
+      \endverb
+      \verb{eprint}
+      \verb https://academic.oup.com/rfs/article-pdf/37/3/761/56670052/hhad067.pdf
+      \endverb
+    \endentry
+    \entry{ctvNews}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=183aff2042bf41142382568ad7a52900}{%
+           family={Matheson},
+           familyi={M\bibinitperiod},
+           given={Darcy},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{183aff2042bf41142382568ad7a52900}
+      \strng{fullhash}{183aff2042bf41142382568ad7a52900}
+      \strng{fullhashraw}{183aff2042bf41142382568ad7a52900}
+      \strng{bibnamehash}{183aff2042bf41142382568ad7a52900}
+      \strng{authorbibnamehash}{183aff2042bf41142382568ad7a52900}
+      \strng{authornamehash}{183aff2042bf41142382568ad7a52900}
+      \strng{authorfullhash}{183aff2042bf41142382568ad7a52900}
+      \strng{authorfullhashraw}{183aff2042bf41142382568ad7a52900}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Majority of foreign buyers from China, new real estate data reveals}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://bc.ctvnews.ca/majority-of-foreign-buyers-from-china-new-real-estate-data-reveals-1.2977337
+      \endverb
+      \verb{url}
+      \verb https://bc.ctvnews.ca/majority-of-foreign-buyers-from-china-new-real-estate-data-reveals-1.2977337
+      \endverb
+    \endentry
+    \entry{paixao2021housing}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ea92fbc600a6f66f90eac88aab542ecc}{%
+           family={Paixao},
+           familyi={P\bibinitperiod},
+           given={Nuno},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Bank of Canada}%
+      }
+      \list{location}{1}{%
+        {Ottawa, Ontario, Canada}%
+      }
+      \strng{namehash}{ea92fbc600a6f66f90eac88aab542ecc}
+      \strng{fullhash}{ea92fbc600a6f66f90eac88aab542ecc}
+      \strng{fullhashraw}{ea92fbc600a6f66f90eac88aab542ecc}
+      \strng{bibnamehash}{ea92fbc600a6f66f90eac88aab542ecc}
+      \strng{authorbibnamehash}{ea92fbc600a6f66f90eac88aab542ecc}
+      \strng{authornamehash}{ea92fbc600a6f66f90eac88aab542ecc}
+      \strng{authorfullhash}{ea92fbc600a6f66f90eac88aab542ecc}
+      \strng{authorfullhashraw}{ea92fbc600a6f66f90eac88aab542ecc}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{2021-21}
+      \field{title}{Canadian Housing Supply Elasticities}
+      \field{type}{Staff Analytical Note}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.34989/san-2021-21
+      \endverb
+      \verb{urlraw}
+      \verb https://www.bankofcanada.ca/wp-content/uploads/2021/09/san2021-21.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.bankofcanada.ca/wp-content/uploads/2021/09/san2021-21.pdf
+      \endverb
+    \endentry
+    \entry{pavlovImmigrationCapitalFlows2018}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b85f67a795367a251fe6a36a4cbab499}{%
+           family={Pavlov},
+           familyi={P\bibinitperiod},
+           given={Andrey},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9bf800fb1e02772131896a538b06b070}{%
+           family={Somerville},
+           familyi={S\bibinitperiod},
+           given={Tsur},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5d930ab956485ca77857875c6f6173aa}
+      \strng{fullhash}{5d930ab956485ca77857875c6f6173aa}
+      \strng{fullhashraw}{5d930ab956485ca77857875c6f6173aa}
+      \strng{bibnamehash}{5d930ab956485ca77857875c6f6173aa}
+      \strng{authorbibnamehash}{5d930ab956485ca77857875c6f6173aa}
+      \strng{authornamehash}{5d930ab956485ca77857875c6f6173aa}
+      \strng{authorfullhash}{5d930ab956485ca77857875c6f6173aa}
+      \strng{authorfullhashraw}{5d930ab956485ca77857875c6f6173aa}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{3}
+      \field{title}{Immigration, Capital Flows and Housing Prices}
+      \field{volume}{48}
+      \field{year}{2020}
+      \field{pages}{915\bibrangedash 949}
+      \range{pages}{35}
+    \endentry
+    \entry{pavlovForeignBuyerTaxes}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b85f67a795367a251fe6a36a4cbab499}{%
+           family={Pavlov},
+           familyi={P\bibinitperiod},
+           given={Andrey},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9bf800fb1e02772131896a538b06b070}{%
+           family={Somerville},
+           familyi={S\bibinitperiod},
+           given={Tsur},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45bb6d63f8aca9cbb4912a73b6d2af83}{%
+           family={Wetzel},
+           familyi={W\bibinitperiod},
+           given={Jake},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0cf43decb0fc728a65c7a9d6983585aa}
+      \strng{fullhash}{0cf43decb0fc728a65c7a9d6983585aa}
+      \strng{fullhashraw}{0cf43decb0fc728a65c7a9d6983585aa}
+      \strng{bibnamehash}{0cf43decb0fc728a65c7a9d6983585aa}
+      \strng{authorbibnamehash}{0cf43decb0fc728a65c7a9d6983585aa}
+      \strng{authornamehash}{0cf43decb0fc728a65c7a9d6983585aa}
+      \strng{authorfullhash}{0cf43decb0fc728a65c7a9d6983585aa}
+      \strng{authorfullhashraw}{0cf43decb0fc728a65c7a9d6983585aa}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1540-6229}
+      \field{journaltitle}{Real Estate Economics}
+      \field{title}{Foreign Buyer Taxes and Housing Affordability}
+      \field{urlday}{28}
+      \field{urlmonth}{12}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1111/1540-6229.12468
+      \endverb
+    \endentry
+    \entry{rbc2024housing}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=81721a1dad320c96a888a2459d00050c}{%
+           family={{RBC Economics}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Royal Bank of Canada}%
+      }
+      \strng{namehash}{81721a1dad320c96a888a2459d00050c}
+      \strng{fullhash}{81721a1dad320c96a888a2459d00050c}
+      \strng{fullhashraw}{81721a1dad320c96a888a2459d00050c}
+      \strng{bibnamehash}{81721a1dad320c96a888a2459d00050c}
+      \strng{authorbibnamehash}{81721a1dad320c96a888a2459d00050c}
+      \strng{authornamehash}{81721a1dad320c96a888a2459d00050c}
+      \strng{authorfullhash}{81721a1dad320c96a888a2459d00050c}
+      \strng{authorfullhashraw}{81721a1dad320c96a888a2459d00050c}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-06-14}
+      \field{title}{Improving housing affordability in Canada takes a backseat}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.rbc.com/en/thought-leadership/economics/canadianhousing/housing-affordability/improving-housing-affordability-in-canada-takes-a-backseat/
+      \endverb
+      \verb{url}
+      \verb https://www.rbc.com/en/thought-leadership/economics/canadianhousing/housing-affordability/improving-housing-affordability-in-canada-takes-a-backseat/
+      \endverb
+    \endentry
+    \entry{specTax2019}{misc}{}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{note}{2019 Tax Year}
+      \field{title}{Speculation and Vacancy Tax Annual Mayors Consultation - Technical Briefing}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www2.gov.bc.ca/assets/gov/taxes/specialty-taxes/svt-annual-mayors-consultation-technical-briefing-2019.pdf
+      \endverb
+      \verb{url}
+      \verb https://www2.gov.bc.ca/assets/gov/taxes/specialty-taxes/svt-annual-mayors-consultation-technical-briefing-2019.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

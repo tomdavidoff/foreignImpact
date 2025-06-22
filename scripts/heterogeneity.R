@@ -67,6 +67,7 @@ ggplot(dv, aes(x=yearQuarter,y=var,group=type,color=type)) +
 	geom_vline(xintercept=2016.75,linetype="dashed",color="red") +
 	theme(legend.position="bottom")
 ggsave("text/variance_decomposition.png")
+fwrite(dv,"data/derived/variance_decomposition.csv")
 dfn <- df[age<5]
 
 
@@ -85,6 +86,7 @@ ggplot(dv, aes(x=yearQuarter,y=var,group=type,color=type)) +
 ggsave("text/variance_decompositionNew.png")
 ggplot(dz,aes(x=yearQuarter,y=within/all))+geom_line()+geom_point()
 ggsave("text/variance_decompositionWithin.png")
+fwrite(dv,"data/derived/variance_decompositionNew.csv")
 
 # check condos 2018
 d18 <- fread("data/raw/chsp2018muni.csv")

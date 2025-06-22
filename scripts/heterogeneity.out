@@ -1,6 +1,6 @@
 
-R version 4.5.0 (2025-04-11) -- "How About a Twenty-Six"
-Copyright (C) 2025 The R Foundation for Statistical Computing
+R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+Copyright (C) 2024 The R Foundation for Statistical Computing
 Platform: aarch64-apple-darwin20
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -556,6 +556,7 @@ integer64
 + 	theme(legend.position="bottom")
 > ggsave("text/variance_decomposition.png")
 Saving 7 x 7 in image
+> fwrite(dv,"data/derived/variance_decomposition.csv")
 > dfn <- df[age<5]
 > 
 > 
@@ -589,6 +590,7 @@ Saving 7 x 7 in image
 > ggplot(dz,aes(x=yearQuarter,y=within/all))+geom_line()+geom_point()
 > ggsave("text/variance_decompositionWithin.png")
 Saving 7 x 7 in image
+> fwrite(dv,"data/derived/variance_decompositionNew.csv")
 > 
 > # check condos 2018
 > d18 <- fread("data/raw/chsp2018muni.csv")
@@ -700,4 +702,4 @@ RMSE: 0.148998     Adj. R2: 0.908664
 > q("no")
 > proc.time()
    user  system elapsed 
- 18.951   7.272   6.735 
+  9.273   0.816  13.813 

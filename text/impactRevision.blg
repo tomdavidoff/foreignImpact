@@ -1,0 +1,24 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'text/impactRevision.blg'
+[31] biber-darwin:340> INFO - === Fri Jun 20, 2025, 13:17:10
+[40] Biber.pm:420> INFO - Reading 'text/impactRevision.bcf'
+[80] Biber.pm:994> INFO - Found 24 citekeys in bib section 0
+[88] Biber.pm:4463> INFO - Processing section 0
+[93] Biber.pm:4654> INFO - Looking for bibtex file 'impact.bib' for section 0
+[95] bibtex.pm:1713> INFO - LaTeX decoding ...
+[116] bibtex.pm:1519> INFO - Found BibTeX data source 'text/impact.bib'
+[197] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[197] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[197] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[197] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[213] bbl.pm:676> INFO - Writing 'text/impactRevision.bbl' with encoding 'UTF-8'
+[219] bbl.pm:779> INFO - Output to text/impactRevision.bbl
+[219] Biber.pm:131> WARN - Duplicate entry key: 'pavlovForeignBuyerTaxes' in file 'text/impact.bib', skipping ...
+[219] Biber.pm:131> WARN - Duplicate entry key: 'DuYinZhang' in file 'text/impact.bib', skipping ...
+[219] Biber.pm:131> WARN - Duplicate entry key: 'pavlovImmigrationCapitalFlows2018' in file 'text/impact.bib', skipping ...
+[219] Biber.pm:131> WARN - Duplicate entry key: 'gellatlyNonresidentOwnershipResidential2017' in file 'text/impact.bib', skipping ...
+[219] Biber.pm:131> WARN - legacy month field 'February' in entry 'gOC' is not an integer - this will probably not sort properly.
+[219] Biber.pm:131> WARN - legacy month field 'aug' in entry 'LiShenZhang' is not an integer - this will probably not sort properly.
+[219] Biber.pm:131> WARN - legacy month field 'may' in entry 'cmhc2025condominium' is not an integer - this will probably not sort properly.
+[219] Biber.pm:131> WARN - legacy month field 'December' in entry 'specTax2019' is not an integer - this will probably not sort properly.
+[219] Biber.pm:133> INFO - WARNINGS: 8
